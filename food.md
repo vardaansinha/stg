@@ -1,4 +1,4 @@
-# random info
+<h1>cool random info :)</h1>
 
 <html>
 <body>
@@ -23,7 +23,6 @@ src="data4justin'sfeature.js"> // get data from outside file
 
 </script>
 
-
 <script>
       
 
@@ -36,9 +35,14 @@ wordout = (random, words[random2])
 
 document.getElementById("a").innerHTML = (factout); 
 document.getElementById("b").innerHTML = (wordout);
+function reset() {
+  window.location.reload();
+}
+
 
 </script> 
 
+<button onclick="reset()">Click here to refresh for new facts!</button>
 
 </body>
 </html>
