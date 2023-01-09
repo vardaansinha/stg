@@ -55,16 +55,16 @@
         <td>Status</td>
     </tr>
     <tr>
-        <td>Program Purpose and Function</td>
-        <td>1</td>
-        <td>0</td>
-        <td>In the 14 second video, I thought  the program showed the input (the command being executed) and the output of the program which was a table of values ​​for each side of a triangle. The description also explained the features of the program. The College Board, in its statement giving this submission  a 0 in this category, said of the response "does not indicate the purpose of the program". This response received 0 because CB returns 0 if any part of the request is missing.</td>
+        <td>Cincanatti Bengals</td>
+        <td>12-4</td>
+        <td>Yes</td>
+        <td>Clinched Division</td>
     </tr>
     <tr>
-        <td>Data Abstraction</td>
-        <td>1</td>
-        <td>1</td>
-        <td>There were two  code segments, the name of the variable representing the list was used in the explanation, and  the submission explained what data  was in the page list and what role it played in the program. Without this list and its data, the program would not have worked. The College Board agreed with this score.</td>
+        <td>Baltimore Ravens</td>
+        <td>10-7</td>
+        <td>Yes</td>
+        <td>Clinched Wild Card</td>
     </tr>
     <tr>
         <td>Managing Complexity</td>
