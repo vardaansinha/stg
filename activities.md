@@ -20,15 +20,15 @@
 
 <br/>
 Top News:  
-<p id="news1">Click the above button to generate news.</p>
-<p id="news2"></p>
+<p class="news2_style" id="news1">Click the above button to generate news.</p>
+<p class="news2_style" id="news2"></p>
 <p id="news3"></p>
 
 <script>
 // Array of 10 news
 var newsArray = [
 "Bolsonaro supporters storm Brazilian Congress.",
-"Kevin McCarth is new speaker",
+"Kevin McCarthy is new speaker",
 "Woman sentenced to three years in state prison for collecting $400,000 in viral GoFundMe scam",
 "Ukraine denies Russian claim it killed 600 soldiers",
 "Damar Hamlin: Buffalo Bills make stirring display in support of safety during victory",
