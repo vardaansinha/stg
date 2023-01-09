@@ -84,3 +84,32 @@ function getNews() {
   </div>
 </div>
 	
+Image Outside	
+<img src="/images/chase1.jpg" alt="Latest Police Chase News" style="width:100%">
+
+Already used image with href	
+<div class="row"> 
+  <div class="column">
+    <a href="https://twitter.com/pcalive"> <img src="/images/Dad_Mom_2019.jpg" alt="Latest Police Chase News" style="width:100%"> </a>
+  </div>
+</div>	
+	
+No HREF
+<div class="row"> 
+  <div class="column">
+    <img src="/images/chase1.jpg" alt="Latest Police Chase News" style="width:100%">
+  </div>
+</div>
+
+2 imaages
+<div class="row"> 
+  <div class="column">
+    <img src="/images/Dad_Mom_2019.jpg" alt="Latest Police Chase News" style="width:100%">
+  </div>
+   <div class="column">
+    <img src="/images/Dad_Mom_2019.jpg" alt="Latest Police Chase News" style="width:100%">
+  </div>
+</div>
+
+	
+	
