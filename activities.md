@@ -56,8 +56,17 @@ function getNews() {
 	    arrayIndex = 0
 	} 
 	document.getElementById("news2").innerHTML = newsArray[arrayIndex++]; // replace the p element news 
+        if (arrayIndex == 15) {
+	    arrayIndex = 0
+	} 								      								      
 	document.getElementById("news3").innerHTML = newsArray[arrayIndex++]; // replace the p element news 
+        if (arrayIndex == 15) {
+	    arrayIndex = 0
+	} 								      								      
       	document.getElementById("news4").innerHTML = newsArray[arrayIndex++]; // replace the p element news 
+        if (arrayIndex == 15) {
+	    arrayIndex = 0
+	} 								      								      
 	document.getElementById("news5").innerHTML = newsArray[arrayIndex++]; // replace the p element news 
 
 }
