@@ -15,11 +15,9 @@
 ## Breaking News
 > Click below to refresh News.
 
-// Clicking this button will call function getJavascriptTips() 
 <br/>
 <button name="button" onclick="getNews()" >Get the news!!!</button>
 
-// The function getNews() will display the JavaScript based news here in this para
 <br/>
 Top News:  
 <p id="news1">Click the above button to generate news.</p>
@@ -45,11 +43,11 @@ var newsArray = [
 function getNews() {
 	var time = new Date().getMilliseconds(); //get current time
 	var arrayIndex = time % 10; // get the arrray index value < 10
-	document.getElementById("news1").innerHTML = newsArray[arrayIndex++]; // replace the p element tips 
+	document.getElementById("news1").innerHTML = newsArray[arrayIndex++]; // replace the p element news 
 	if (arrayIndex == 10) {
 	    arrayIndex = 0
 	} 
-	document.getElementById("news2").innerHTML = newsArray[arrayIndex++]; // replace the p element tips 
-	document.getElementById("news3").innerHTML = newsArray[arrayIndex++]; // replace the p element tips 
+	document.getElementById("news2").innerHTML = newsArray[arrayIndex++]; // replace the p element news 
+	document.getElementById("news3").innerHTML = newsArray[arrayIndex++]; // replace the p element news 
 }
 </script>
