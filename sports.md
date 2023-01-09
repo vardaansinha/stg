@@ -52,7 +52,7 @@
 <br>
 
 Playoffs:
-<img src="/images/Bengals.jpg" alt="Gniby" style="width:100%"> vs <img src="/images/Ravens.png" alt="Gniby" style="width:100%">
+<img src="/images/Bengals.jpg" alt="Gniby" style="width:100%"> vs <img src="/images/Ravens2.png" alt="Gniby" style="width:100%">
 
 ### NBA
 
