@@ -80,7 +80,7 @@ function getNews() {
 ## Click below for latest Police Chase News 
 <div class="row"> 
   <div class="column">
-    [![Latest Police Chase News](/images/chase.png)](https://twitter.com/pcalive/ "Latest Police Chase News") 
+    <a href="https://twitter.com/pcalive"> <img src="/images/chase.png" alt="Latest Police Chase News" style="width:100%"> </a>
   </div>
 </div>
 	
