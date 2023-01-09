@@ -127,15 +127,15 @@
         <td>3</td>
     </tr>
     <tr>
-        <td>Algorithm Implementation</td>
-        <td>1</td>
-        <td>1</td>
-        <td>The submission describes the implementation of the replaceList method and the algorithm it contains. The explanation deserves 1/1 because it is very specific about the algorithms and steps it contains and ticks all the boxes.</td>
+        <td>Golden State Warriors</td>
+        <td>20-20</td>
+        <td>Western Conference</td>
+        <td>6</td>
     </tr>
     <tr>
-        <td>Testing</td>
-        <td>1</td>
-        <td>1</td>
-        <td>Test scored 1/1 and CB agreed. This discussion describes two of her calls to procedures that contribute to the execution of various code segments in the program. This discussion also describes the conditions  tested in relation to the procedure call and finally the results of his two calls to the procedure.</td>
+        <td>New Orleans Pelicans</td>
+        <td>26-13</td>
+        <td>Western Conference</td>
+        <td>3</td>
     </tr>
 </table>
