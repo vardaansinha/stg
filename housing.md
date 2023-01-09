@@ -1,4 +1,4 @@
-## Housing Overview
+## Global News
 > Sleeps 48 people. Verify your housing assignment at the reunion with Jeremiah and Melissa in case there are last minute changes.
  
 > Preview [Homes](https://www.coramranch.com/vacation-home)
