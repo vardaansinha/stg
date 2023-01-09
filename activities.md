@@ -79,8 +79,11 @@ function getNews() {
 
 ## Click below for latest US Police Chase News 
 ![](images/chase1.jpg)
-
+<a href="https://twitter.com/pcalive">US Police Chase News</a> 
+<br/>
+<br/>
+<br/>	
 ## Click below for latest San Diego Police Capture News 
-[![](images/chase1.jpg)]
-(https://twitter.com/SanDiegoPD?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor "SDPD Capture")
+![](images/sdpd.jpg)
+<a href="https://twitter.com/SanDiegoPD?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor">San Diego Police Capture News </a> 
 	
