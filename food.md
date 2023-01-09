@@ -1,42 +1,48 @@
-## Planned Meals
-> The Alpine lodge extra-large kitchen seats 44 people.  The kitchens are perfect for large group meals and all come equipped with appropriate appliances and utensils. There is an outdoor barbecue!  There is a fridge and individual kitchens in the homes.   So there is a place to store snacks, make sure you stock up for the little ones.
+<h1>cool random info :)</h1>
 
-### Monday Dinner
+<html>
+<body>
 
- 
-### Tuesday Breakfast (8-9:30am)
-> Grits and Sausage Links in the main hall
+<table style="width:100%">
+  <tr>
+    <th>random fact</th>
+    <th>random word</th>
+  </tr>
+  <tr>
+    <td id = "a">no facts?</td>
+    <td id = "b">no words?</td>
 
-### Tuesday Lunch
-> Make lunch at dinning room.  Pack and Go.  Eat outside or at your housing, pick up trash and leave no mess in dinning hall or grounds.
-
-### Tuesday Dinner
-
-
-### Wednesday Breakfast (8-9:30am)
-
-### Wednesday Lunch
-> Make lunch at dinning room.  Pack and Go.  Leave no mess please.  There is option to purchase food at the caverns, there is a picnic are at the site.
-
-
-### Wednesday Dinner
+  </tr>
+  <tr>
+</tr>
+</table>
 
 
-### Thursday Breakfast (8-9:30am)
+ <script type="text/javascript" 
+src="data4justin'sfeature.js"> // get data from outside file
 
-### Thursday Lunch
-> Make lunch at dinning room.  Pack and Go.  Leave no mess please.  There will likely be some down time and extra snacks will be wanted while boating.
+</script>
 
-### Thursday Dinner
+<script>
+      
 
+random = Math.floor(Math.random() * facts.length);  // get random element from the lists in outside data
+random2 = Math.floor(Math.random() * words.length);
 
-### Friday Breakfast (8-9:30am)
-
-### Friday Lunch
-> Make lunch at dinning room.  Pack and Go.  There are lots of places to explore and eat in the community of Shasta Lakes and Redding.
-
-### Friday Dinner
+factout = (random, facts[random]) //assign random 
+wordout = (random, words[random2])
 
 
-### Saturday Breakfast (8-9:30am)
+document.getElementById("a").innerHTML = (factout); 
+document.getElementById("b").innerHTML = (wordout);
+function reset() {
+  window.location.reload();
+}
 
+
+</script> 
+
+<button onclick="reset()">Click here to refresh for new facts!</button>
+
+</body>
+</html>
