@@ -103,19 +103,19 @@
         <td>Position in Conference</td>
     </tr>
     <tr>
-        <td>Program Purpose and Function</td>
-        <td>1</td>
-        <td>1</td>
-        <td>A video showing the program in action shows that there is  user input from the user placing tiles in a grid, and  output from how the game works. Here is  the simulation in action: In the description, the submission states the program's purpose, the features shown in the video, and the program's inputs and outputs (explicitly written in the description). CB agreed with this rating and also gave it a rating of 1/1.</td>
+        <td>Los Angeless Lakers</td>
+        <td>19-21</td>
+        <td>Western Conference</td>
+        <td>11</td>
     </tr>
     <tr>
-        <td>Data Abstraction</td>
+        <td>Boston Celtics</td>
+        <td>28-12</td>
+        <td>Eastern Conference</td>
         <td>1</td>
-        <td>1</td>
-        <td>The description shows two different code segments that demonstrate how the  data is persisted. Specify the name of the list (startGrid) and the contents of the list. It ticked all the boxes and  gave it a 1/1 as did CB.</td>
     </tr>
     <tr>
-        <td>Managing Complexity</td>
+        <td>Milwaukee Bucks</td>
         <td>1</td>
         <td>1</td>
         <td>In the explanation (3.b.v) the submission describes how  the task becomes incredibly complex with the use of variables and other methods, and then  how lists can be used  to handle that complexity. About So I gave it a 1/1 and so did CB.</td>
