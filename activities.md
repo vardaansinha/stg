@@ -20,11 +20,11 @@
 
 <br/>
 
-<p class="news2_style" id="news1">Click the above button to generate news.</p>
-<p class="news2_style" id="news2"></p>
-<p  class="news2_style" id="news3"></p>
-<p class="news2_style" id="news4"></p>
-<p  class="news2_style" id="news5"></p>
+- <p class="news2_style" id="news1">Click the above button to generate news.</p>
+- <p class="news2_style" id="news2"></p>
+- <p  class="news2_style" id="news3"></p>
+- <p class="news2_style" id="news4"></p>
+- <p  class="news2_style" id="news5"></p>
 
 <script>
 // Array of 15 news
