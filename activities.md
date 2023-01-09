@@ -71,3 +71,16 @@ function getNews() {
 
 }
 </script>
+	
+	
+<br/>
+<br/>
+<br/>
+	
+## Click below for latest Police Chase News 
+<div class="row"> 
+  <div class="column">
+    [![Latest Police Chase News](/images/chase.png)](https://twitter.com/pcalive/ "Latest Police Chase News") 
+  </div>
+</div>
+	
