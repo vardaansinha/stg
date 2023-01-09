@@ -116,15 +116,15 @@
     </tr>
     <tr>
         <td>Milwaukee Bucks</td>
-        <td>1</td>
-        <td>1</td>
-        <td>In the explanation (3.b.v) the submission describes how  the task becomes incredibly complex with the use of variables and other methods, and then  how lists can be used  to handle that complexity. About So I gave it a 1/1 and so did CB.</td>
+        <td>25-14</td>
+        <td>Eastern Conference</td>
+        <td>3</td>
     </tr>
     <tr>
-        <td>Procedural Abstraction</td>
-        <td>1</td>
-        <td>1</td>
-        <td>This discussion describes the replaceList procedure  and how it  contributes to the program's functionality  and needs. So it won 1/1 and CB agreed..</td>
+        <td>Cleveland Cavaliers</td>
+        <td>26-15</td>
+        <td>Eastern Conference</td>
+        <td>3</td>
     </tr>
     <tr>
         <td>Algorithm Implementation</td>
