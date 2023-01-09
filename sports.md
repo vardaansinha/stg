@@ -67,22 +67,22 @@
         <td>Clinched Wild Card</td>
     </tr>
     <tr>
-        <td>Managing Complexity</td>
-        <td>0</td>
-        <td>0</td>
-        <td>The filing description does not mention  how the named list (sideIndex) manages program complexity. CB agreed with this rating and  gave the submission her 0/1 in this rating category.</td>
+        <td>Bufalo Bills</td>
+        <td>13-3</td>
+        <td>Yes</td>
+        <td>Clinched Divison</td>
     </tr>
     <tr>
-        <td>Procedural Abstraction</td>
-        <td>1</td>
-        <td>1</td>
-        <td>The student-developed procedure is ratioCalculate, and there is a student-developed procedure and another code segment  that calls the procedure. In the description, the filing also explains how this her RatioCalculate procedure contributes to the program's functionality.</td>
+        <td>Kansas City Chiefs</td>
+        <td>14-3</td>
+        <td>Yes</td>
+        <td>Clinched Conference</td>
     </tr>
     <tr>
-        <td>Algorithm Implementation</td>
-        <td>1</td>
-        <td>1</td>
-        <td>The description has a program code segment describing the ratioCalculate algorithm developed by the student, which includes all  the CB requirements. The explanation is very descriptive in relation to this algorithm, which is why CB  gave the submission  1/1 in this category as well.</td>
+        <td>Seattle Seahawks</td>
+        <td>9-8</td>
+        <td>Yes</td>
+        <td>Clinched Wild Card</td>
     </tr>
     <tr>
         <td>Testing</td>
