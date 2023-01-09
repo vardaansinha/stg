@@ -53,7 +53,6 @@
         <td>Record</td>
         <td>Playoff?</td>
         <td>Status</td>
-        <td>Team Pic</td>
     </tr>
     <tr>
         <td>Cincanatti Bengals</td>
