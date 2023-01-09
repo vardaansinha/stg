@@ -85,10 +85,10 @@
         <td>Clinched Wild Card</td>
     </tr>
     <tr>
-        <td>Testing</td>
-        <td>1</td>
-        <td>1</td>
-        <td>It got a 1/1. This is because the description shows two calls to the procedure with different arguments and states the conditions  tested for each of those calls. Finally, since the responses indicated the outcome of each of these calls, CB met all the requirements of this section of the evaluation, similarly giving him a 1/1.</td>
+        <td>Tampa Bay Buccanears</td>
+        <td>8-9</td>
+        <td>Yes</td>
+        <td>Clinched Division</td>
     </tr>
 </table>
 <br>
