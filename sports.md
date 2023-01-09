@@ -96,10 +96,10 @@
 **Submission #2**
 <table>
     <tr>
-        <td>Reporting Category</td>
-        <td>Student Score</td>
-        <td>CB Score</td>
-        <td>Comments</td>
+        <td>Team</td>
+        <td>Record</td>
+        <td>Conference</td>
+        <td>Position in Conference</td>
     </tr>
     <tr>
         <td>Program Purpose and Function</td>
