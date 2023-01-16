@@ -67,8 +67,8 @@
      <input type="password" class="login" id="pwd" placeholder="Confirm password..">
     <div>
     <br>
-      <button id="enter" type="button" onclick="window.location.href='{{ site.baseurl }}/stg/activities';">Sign me up!</button>
-      <button id="login" type="button" onclick="window.location.href='{{ site.baseurl }}/stg/login';">I already have an account, login.</button>
+      <button id="enter" type="button" onclick="window.location.href='{{ site.baseurl }}/activities';">Sign me up!</button>
+      <button id="login" type="button" onclick="window.location.href='{{ site.baseurl }}/login';">I already have an account, login.</button>
     </div>
     
   </body>
