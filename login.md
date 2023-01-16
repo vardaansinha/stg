@@ -66,7 +66,7 @@
     <input type="password" class="login" id="pwd" placeholder="Enter password here..">
     <div>
     <br>
-      <button id="enter" type="button" onclick="window.location.href='{{ site.baseurl }}/activities';">Log me in!</button>
+      <button id="enter" type="button" onclick="window.location.href='{{ site.baseurl }}/';">Log me in!</button>
       <div class="newaccount">
        <p id="noacc">Want some notifications and newsletters?</p>
       </div>
