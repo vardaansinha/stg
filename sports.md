@@ -175,6 +175,8 @@
 
 <script>
 
+# Arithmetic Calculator
+    
 var taskInput = document.getElementById('newTask');
 var addTaskButton = document.getElementById('addTaskButton');
 var timeInput = document.getElementById('newTime');
