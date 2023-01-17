@@ -51,8 +51,6 @@
 </table>
 <br>
 
-Playoffs:
-<img src="/images/download.png" alt="Bengals Image" style="width:100%"> vs <img src="/images/Ravens2.png" alt="Ravens Image" style="width:100%">
 
 ### NBA
 
