@@ -89,7 +89,7 @@ function getNews() {
 <a href="https://twitter.com/SanDiegoPD?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor">San Diego Police Capture News </a> 
 
 <br/><br/><br/>
-<p> Signup for weekly Newsletter </p>
+##  Signup for weekly Newsletter 
 <br/>
 <table>
   <thead>
@@ -105,10 +105,8 @@ function getNews() {
 </table>
 
 <br/>
-<br/>
-<br/>
-<p> Enter your Name and ID: </p>
-<br/>
+##  Enter your Name and ID: 
+
 <table>
     <tr>
         <th><label for="name">Name</label></th>
