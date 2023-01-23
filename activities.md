@@ -123,8 +123,9 @@ function getNews() {
 
 <script>
 
-// Static json, this can be used to test data prior to API and Model being ready
-jsonStr = '[{"_name": "Tom Brady", "_uid": "tbrady"}, {"_name": "Peyton Manning", "_uid": "pmanning"}, {"_name": "Donovan", "_uid": "donovan"}, {"_name": "McNab", "_uid": "mcnab"}, {"_name": "Eli Manning", "_uid": "emanning"}]';
+// Static json, this can be used to test data prior to API and Mo
+jsonStr = '[{"_name": "Bolsonaro supporters storm Brazilian Congress.", "_uid": "CNN"}, {"_name": "Kevin McCarthy is new speaker", "_uid": "Fox"}, {"_name": "Woman sentenced to three years in state prison for collecting $400,000 in viral GoFundMe scam", "_uid": "ABC"}, {"_name": "Ukraine denies Russian claim it killed 600 soldiers", "_uid": "NBC"}, {"_name": "Damar Hamlin: Buffalo Bills make stirring display in support of safety during victory", "_uid": "BBC"}]';
+	
 glob = 1;
 
 function createUser() {
