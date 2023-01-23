@@ -89,13 +89,13 @@ function getNews() {
 <a href="https://twitter.com/SanDiegoPD?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor">San Diego Police Capture News </a> 
 
 <br/><br/><br/>
-##  Signup for weekly Newsletter 
+##  Signup for more Breaking News 
 <br/>
 <table>
   <thead>
   <tr>
-    <th>Name</th>
-    <th>ID</th>
+    <th>News</th>
+    <th>Network</th>
     <th>Actions</th>
   </tr>
   </thead>
@@ -105,14 +105,12 @@ function getNews() {
 </table>
 
 <br/>
-##  Enter your Name and ID: 
+##  Add Breaking News and Network Details: 
 
 <table>
     <tr>
-        <th><label for="name">Name</label></th>
-        <th><label for="email">ID</label></th>
-        <th><label for="password">Password</label></th>
-        <th><label for="phone">Phone</label></th>
+        <th><label for="name">Breaking News</label></th>
+        <th><label for="email">Network</label></th>
     </tr>
     <tr>
         <td><input type="text" name="name" id="name" required></td>
