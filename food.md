@@ -17,7 +17,7 @@
 </tr>
 </table>
 
-<table style="width:100%">
+<!-- <table style="width:100%">
   <tr>
     <th>name</th>
     <th>score</th>
@@ -29,7 +29,7 @@
   </tr>
   <tr>
 </tr>
-</table>
+</table> -->
 
 
 
@@ -63,15 +63,15 @@ function reset() {
 
 
 
-<p><label>
+<!-- <p><label>
         name:
         <input type="text" name="letter1" id="letter1">
     </label></p>
 
-<p><label>
+ <p><label>
         score:
         <input type="text" name="letter2" id="letter2">
-    </label></p>
+    </label></p> -->
 
 <script>
 
@@ -91,7 +91,7 @@ document.getElementById("score").innerHTML = (sCore1);
 
 </script>
 
- <p><button onclick="store_data()">add names and score</button></p>
+ <!-- <p><button onclick="store_data()">add names and score</button></p> -->
 
 </body>
 
