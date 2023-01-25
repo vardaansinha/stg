@@ -63,15 +63,15 @@ function reset() {
 
 
 
-<p><label>
+<!-- <p><label>
         name:
         <input type="text" name="letter1" id="letter1">
     </label></p>
 
-<p><label>
+ <p><label>
         score:
         <input type="text" name="letter2" id="letter2">
-    </label></p>
+    </label></p> -->
 
 <script>
 
