@@ -1,4 +1,4 @@
-<h1>cool random info :) (learn something new every day)</h1>
+<h1>Education: Cool Information</h1>
 
 <html>
 <body>
