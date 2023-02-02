@@ -17,19 +17,20 @@
 </tr>
 </table>
 
-<!-- <table style="width:100%">
+
+<table style="width:100%">
   <tr>
-    <th>name</th>
-    <th>score</th>
+    <th>question</th>
+    <th>answer</th>
   </tr>
   <tr>
-    <td id = "name">name</td>
-    <td id = "score">score</td>
+    <td id = "name">a question</td>
+    <td id = "score">a answer</td>
 
   </tr>
   <tr>
 </tr>
-</table> -->
+</table>
 
 
 
@@ -39,7 +40,19 @@ src="data4justin'sfeature.js"> // get data from outside file
 </script>
 
 <script>
-      
+
+
+function question(ans) {
+  randquestion = ("test")
+  randans = ("test2")
+  i = 5
+  var useranswer = letter1.value;
+  while i == 1 {
+    if useranswer = ("test2") {
+      document.getelementbyid("right") = ("right!")
+    }
+  }
+}
 
 random = Math.floor(Math.random() * facts.length);  // get random element from the lists in outside data (thks stack overflow)
 random2 = Math.floor(Math.random() * words.length); 
@@ -63,12 +76,12 @@ function reset() {
 
 
 
-<!-- <p><label>
-        name:
+ <p><label>
+        put answer here!:
         <input type="text" name="letter1" id="letter1">
     </label></p>
 
- <p><label>
+ <!-- <p><label>
         score:
         <input type="text" name="letter2" id="letter2">
     </label></p> -->
