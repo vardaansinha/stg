@@ -21,11 +21,11 @@
 <table style="width:100%">
   <tr>
     <th>question</th>
-    <th>answer</th>
+    <th>are you correct?</th>
   </tr>
   <tr>
-    <td id = "name">a question</td>
-    <td id = "score">a answer</td>
+    <td id = "question">a question</td>
+    <td id = "correct?">Answer</td>
 
   </tr>
   <tr>
@@ -40,9 +40,39 @@ src="data4justin'sfeature.js"> // get data from outside file
 </script>
 
 <script>
+function question(){
+  random3 = Math.floor(Math.random() * quest.length); 
+
+  questout = (random, quest[random3]);
+
+  questoutQ = questout.question;
+  
+  questoutANS = questout.correctAnswer;
+
+  document.getElementById("question").innerHTML = (questoutQ);
+  alert("new question made!")
+}
+function test(ans){
+  let lives = 3;
+  while (lives > 0) {
+  ans = useranswer.value;
+  
+  if (ans == (questoutANS)) {
+  
+  alert("right!");
+  
+  document.getElementById("correct?").innerHTML = 
+(questoutANS);
+  lives = 0;
+  } else {
+  alert("wrong answer!");
+  lives = lives - 1;
+} }
+alert("ok")
+}
 
 
-function question(ans) {
+ /*function question(ans) {
   randquestion = ("test")
   randans = ("test2")
   i = 5
@@ -52,17 +82,21 @@ function question(ans) {
       document.getelementbyid("right") = ("right!")
     }
   }
-}
+} */
 
 random = Math.floor(Math.random() * facts.length);  // get random element from the lists in outside data (thks stack overflow)
 random2 = Math.floor(Math.random() * words.length); 
+
 
 factout = (random, facts[random]) //assign random 
 wordout = (random, words[random2])
 
 
+
 document.getElementById("a").innerHTML = (factout); 
 document.getElementById("b").innerHTML = (wordout);
+
+
 function reset() {
   window.location.reload();
 }
@@ -74,12 +108,16 @@ function reset() {
 
 
 
+<button onclick="question()">Click here to create a math question!</button>
+
+<button onclick="test()">Click here to check the answer!</button>
 
 
  <p><label>
         put answer here!:
-        <input type="text" name="letter1" id="letter1">
+        <input type="text" name="letter1" id="useranswer">
     </label></p>
+
 
  <!-- <p><label>
         score:
@@ -100,6 +138,7 @@ document.getElementById("score").innerHTML = (sCore1);
 
 
 }
+
 
 
 </script>
