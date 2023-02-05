@@ -18,15 +18,11 @@
 </style>
 
 ## Breaking News with Maps API
-<!--The div element for the map -->
 <div id="map"></div>
 
-    <script
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDGFTzdQZItR5kLPiXKNoM3Q2qCWHDAI1I&callback=initMap&v=weekly"
-      defer
-    ></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDGFTzdQZItR5kLPiXKNoM3Q2qCWHDAI1I&callback=initMap&v=weekly" defer></script>
     
-    <script>                              
+<script>                              
       // Initialize and add the map
       function initMap() {
         // The location of Borrego Springs
@@ -89,11 +85,11 @@
       }
 
       window.initMap = initMap;
-  </script>
+</script>
 <br/>
 <br/>
 <br/>
-
+<div id="map1"></div>
 ## Breaking News
 > Click below to refresh News.
 
