@@ -9,7 +9,7 @@
 
 - <p class="news2_style" id="tips1">Click the above button to see some cool events that have happened on this day.</p>
 - <p class="news2_style" id="tips2"></p>
-- <p  class="news2_style" id="tips3"></p>
+- <p class="news2_style" id="tips3"></p>
 
 
 <script>
