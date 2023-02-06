@@ -4,12 +4,6 @@
 <br>
 > In Gniby, part of the Kaffrine Region in Senegal, at least 40 people were killed and even more were critically injured in a bus crash. Senegal has decided that they will observe three days of mourning for the victims starting on the 9th of January. Transport safety has often been a problem in many parts of Senegal, and a council is likely going to meet to discuss some actions to make transportation more safe for the Senegalese citizens.
 
-<div class="row"> <!--- make a new row -->
-  <!-- each column is one-third of width -->
-  <div class="column">
-    <img src="/images/senegalmap.png" alt="Gniby" style="width:100%">
-  </div>
-</div>
 <br>
 ## Japan flight makes emergency landing after apparent bomb threat
 <br>
