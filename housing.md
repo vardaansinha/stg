@@ -24,6 +24,11 @@ var healthArray = [
 "1958: 8 Man United players died in a British European Airways flight crash from Munich Airport.",
 "2003: The infamous Michael Jackson interview 'Living with Michael Jackson' aired on ABC.",
 "2007: DoS attack slams the Internet and lasts for 2.5 hours.",	
+"1959: The first microchip is patented",
+"1952: Elizabeth II becomes the Queen of the United Kingdom",
+"1895: Legendary baseball player Babe Ruth was born",
+"1911: 40th President of the United States Ronald Reagan was born",
+"1945: Popular Jamaican singer and songwriter Bob Marley was born",
 ];
 								       
 // this function is called upon button click
@@ -41,6 +46,12 @@ function getQuotes() {
 	document.getElementById("tips3").innerHTML = healthArray[arrayIndex++]; // replace the p element news 
         if (arrayIndex == 15) {
 	    arrayIndex = 0
+	} 								      								      
+      	document.getElementById("tips4").innerHTML = healthArray[arrayIndex++]; // replace the p element news 
+        if (arrayIndex == 15) {
+	    arrayIndex = 0
+	} 								      								      
+	document.getElementById("tips5").innerHTML = healthArray[arrayIndex++]; // replace the p element news 
 
 }
 								      				      
