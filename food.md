@@ -51,13 +51,9 @@ function question(){
 
   document.getElementById("question").innerHTML = (questoutQ);
   alert("new question made!")
-  lives = 3;
 }
 
-
 function test(ans){
-  alert(lives)
-
   ans = useranswer.value;
   
   if (ans == (questoutANS)) {
@@ -69,11 +65,25 @@ function test(ans){
   
 
   } else {
-    while i > 3:
-    
+  
   alert("wrong answer!");
+  x = 0
+  while(true) {
+    
+    userInput = prompt(" Now think about the question and enter the correct answer this time             >:( ");
+  
+  if (userInput == questoutANS) {
+    
+    alert("good job...")
+    document.getElementById("correct?").innerHTML = 
+(questoutANS);
+    break;
+  }
+  x = x + 1;
+  alert("how many times until you get it right? you have failed " + (x) + " times!");
+}
+  }
     }
-} 
 
 
 
