@@ -20,7 +20,7 @@
 ## Breaking News with Maps API
 <div id="map"></div>
 
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDGFTzdQZItR5kLPiXKNoM3Q2qCWHDAI1I&callback=initMap&v=weekly" defer></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyChhAisKAHMljl0nrnmCOL4zm0Ek6KlK2U&callback=initMap&v=weekly" defer></script>
     
 <script>                              
       // Initialize and add the map
