@@ -1,16 +1,58 @@
-# Global News
-<br>
-## 40 people dead, more people injured in bus crash in Senegal
-<br>
-> In Gniby, part of the Kaffrine Region in Senegal, at least 40 people were killed and even more were critically injured in a bus crash. Senegal has decided that they will observe three days of mourning for the victims starting on the 9th of January. Transport safety has often been a problem in many parts of Senegal, and a council is likely going to meet to discuss some actions to make transportation more safe for the Senegalese citizens.
+## On This Day
+> Want to see cool things (and some not so cool things) that have happened on this day? Look below!
 
-<div class="row"> <!--- make a new row -->
-  <!-- each column is one-third of width -->
-  <div class="column">
-    <img src="/images/senegalmap.png" alt="Gniby" style="width:100%">
-  </div>
-</div>
-<br>
-## Japan flight makes emergency landing after apparent bomb threat
-<br>
-> On Saturday, Narita Airport (Tokyo) received a call at 6:20 AM from a man in Germany claiming to have kept 100 kilograms of plastic explosives on the plane. The plane had to divert from its original destination to Chubu Airport, and all of the passengers and crew members were able to safely exit the plane. Fortunately, there was no bomb on the plane, and there were no casualties.
+
+<br/>
+<button name="button" onclick="getQuotes()" >Show me what happened on February 6th.</button>
+
+<br/>
+
+- <p class="news2_style" id="tips1">Click the above button to see some cool events that have happened on this day.</p>
+- <p class="news2_style" id="tips2"></p>
+- <p class="news2_style" id="tips3"></p>
+
+
+<script>
+var healthArray = [
+"1932: First Olympic Dog sled race takes place in New York",
+"1935: Monopoly goes on sale for the first time",
+"1948: Cricket legend Donald Bradman retires hurt in his last innings for the Australian National Team.",
+"1911: Rolls-Royce Mascot Chosen",
+"1952: King George VI Dies",
+"1971: Alan Shepard becomes the first man to hit a golf ball on the Moon. He hid this in his space suit!",
+"1943: Frank Sinatra made his singing debut with 'Your Hit Parade'.",
+"1958: 8 Man United players died in a British European Airways flight crash from Munich Airport.",
+"2003: The infamous Michael Jackson interview 'Living with Michael Jackson' aired on ABC.",
+"2007: DoS attack slams the Internet and lasts for 2.5 hours.",	
+"1959: The first microchip is patented",
+"1952: Elizabeth II becomes the Queen of the United Kingdom",
+"1895: Legendary baseball player Babe Ruth was born",
+"1911: 40th President of the United States Ronald Reagan was born",
+"1945: Popular Jamaican singer and songwriter Bob Marley was born",
+];
+								       
+// this function is called upon button click
+function getQuotes() {
+	var time = new Date().getMilliseconds(); //get current time
+	var arrayIndex = time % 15; // get the array index value < 15
+	document.getElementById("tips1").innerHTML = healthArray[arrayIndex++]; // replace the p element news 
+	if (arrayIndex == 15) {
+	    arrayIndex = 0
+	} 
+	document.getElementById("tips2").innerHTML = healthArray[arrayIndex++]; // replace the p element news 
+        if (arrayIndex == 15) {
+	    arrayIndex = 0
+	} 								      								      
+	document.getElementById("tips3").innerHTML = healthArray[arrayIndex++]; // replace the p element news 
+        if (arrayIndex == 15) {
+	    arrayIndex = 0
+	} 								      								      
+      	document.getElementById("tips4").innerHTML = healthArray[arrayIndex++]; // replace the p element news 
+        if (arrayIndex == 15) {
+	    arrayIndex = 0
+	} 								      								      
+	document.getElementById("tips5").innerHTML = healthArray[arrayIndex++]; // replace the p element news 
+
+}
+								      				      
+</script>
