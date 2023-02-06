@@ -1,5 +1,6 @@
 ## On This Day
-> Click below to refresh News.
+> Want to see cool things (and some not so cool things) that have happened on this day? Look below!
+
 
 <br/>
 <button name="button" onclick="getQuotes()" >Show me what happened on February 6th.</button>
