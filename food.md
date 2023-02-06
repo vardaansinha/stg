@@ -51,10 +51,13 @@ function question(){
 
   document.getElementById("question").innerHTML = (questoutQ);
   alert("new question made!")
+  lives = 3;
 }
+
+
 function test(ans){
-  let lives = 3;
-  while (lives > 0) {
+  alert(lives)
+
   ans = useranswer.value;
   
   if (ans == (questoutANS)) {
@@ -63,13 +66,15 @@ function test(ans){
   
   document.getElementById("correct?").innerHTML = 
 (questoutANS);
-  lives = 0;
+  
+
   } else {
+    while i > 3:
+    
   alert("wrong answer!");
-  lives = lives - 1;
-} }
-alert("ok")
-}
+    }
+} 
+
 
 
  /*function question(ans) {
