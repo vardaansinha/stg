@@ -2,7 +2,7 @@
 > Click below to refresh News.
 
 <br/>
-<button name="button" onclick="getQuotes()" >Get the latest news!!!</button>
+<button name="button" onclick="getQuotes()" >Show me what happened on February 6th.</button>
 
 <br/>
 
@@ -27,7 +27,7 @@ var healthArray = [
 ];
 								       
 // this function is called upon button click
-function getTips() {
+function getQuotes() {
 	var time = new Date().getMilliseconds(); //get current time
 	var arrayIndex = time % 15; // get the array index value < 15
 	document.getElementById("tips1").innerHTML = healthArray[arrayIndex++]; // replace the p element news 
