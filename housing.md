@@ -10,8 +10,7 @@
 - <p class="news2_style" id="tips1">Click the above button to see some cool events that have happened on this day.</p>
 - <p class="news2_style" id="tips2"></p>
 - <p  class="news2_style" id="tips3"></p>
-- <p class="news2_style" id="tips4"></p>
-- <p  class="news2_style" id="tips5"></p>
+
 
 <script>
 var healthArray = [
@@ -42,12 +41,6 @@ function getQuotes() {
 	document.getElementById("tips3").innerHTML = healthArray[arrayIndex++]; // replace the p element news 
         if (arrayIndex == 15) {
 	    arrayIndex = 0
-	} 								      								      
-      	document.getElementById("tips4").innerHTML = healthArray[arrayIndex++]; // replace the p element news 
-        if (arrayIndex == 15) {
-	    arrayIndex = 0
-	} 								      								      
-	document.getElementById("tips5").innerHTML = healthArray[arrayIndex++]; // replace the p element news 
 
 }
 								      				      
