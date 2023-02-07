@@ -25,7 +25,7 @@
   </tr>
   <tr>
     <td id = "question">a question</td>
-    <td id = "correct?">The correct answer will appear when the question is answered correctly</td>
+    <td id = "correct?">correct answer appears when the question's answered correctly</td>
 
   </tr>
   <tr>
