@@ -67,10 +67,10 @@ function test(ans){
   } else {
   
   alert("wrong answer!");
-  x = 0
+  x = 1
   while(true) {
     
-    userInput = prompt(" Now think about the question and enter the correct answer this time             >:( ");
+    userInput = prompt(" Now think about the question and enter the correct answer this time");
   
   if (userInput == questoutANS) {
     
@@ -80,7 +80,7 @@ function test(ans){
     break;
   }
   x = x + 1;
-  alert("how many times until you get it right? you have failed " + (x) + " times!");
+  alert("how many times until you get it right? you have failed this question " + (x) + " times now!");
 }
   }
     }
