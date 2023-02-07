@@ -21,7 +21,7 @@
 <table style="width:100%">
   <tr>
     <th>question</th>
-    <th>are you correct?</th>
+    <th>Answer</th>
   </tr>
   <tr>
     <td id = "question">a question</td>
