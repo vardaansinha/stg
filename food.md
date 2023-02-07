@@ -25,7 +25,7 @@
   </tr>
   <tr>
     <td id = "question">a question</td>
-    <td id = "correct?">Answer</td>
+    <td id = "correct?">The correct answer will appear when the question is answered correctly</td>
 
   </tr>
   <tr>
@@ -50,6 +50,8 @@ function question(){
   questoutANS = questout.correctAnswer;
 
   document.getElementById("question").innerHTML = (questoutQ);
+  document.getElementById("correct?").innerHTML = ("The correct answer will appear when the question is answered correctly");
+
   alert("new question made!")
 }
 
