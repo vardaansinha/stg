@@ -36,31 +36,31 @@
         var markers = [
           {
           coords : {lat: 32.7157, lng: -117.1611}, 
-          content: '<a style="color:blue;" href="http://www.cnn.com">CNN Padres FanFest mayhem: Long lines, crowded concourses, and delayed entry</a>' 
+          content: '<a style="color:blue;" href="https://www.cbs8.com/article/news/local/padres-fanfest-mayhem-crowded-concourses-and-delayed-entry/509-543c588b-0eba-4c95-bb84-b3538894dd77">CNN Padres FanFest mayhem: Long lines, crowded concourses, and delayed entry</a>' 
           },
           {
           coords : {lat: 33.4934, lng: -117.1488}, 
-          content: '<p style="color:blue;">Temecula - Forklifts Stolen From Home Depot</p>'  
+          content: '<a style="color:blue;" href="https://fox5sandiego.com/news/local-news/forklift-stolen-from-oceanside-home-depot-in-broad-daylight/">Forklifts Stolen From Home Depot</a>'  
           }, 
           {
           coords : {lat: 33.6846, lng: -117.8265}, 
-          content: '<p style="color:blue;">Long Beach State beats UC Irvine in OT</p> '  
+          content: '<a style="color:blue;" href="https://www.usatoday.com/story/sports/ncaab/2023/02/05/long-beach-state-beats-uc-irvine-in-ot-for-6th-straight-win/51256357/">Long Beach State beats UC Irvine in OT</a> '  
           }, 
           {  
           coords : {lat: 32.7920, lng: -115.5631}, 
-          content: '<p style="color:blue;"> El Centro will conduct a public hearing for new parks</p>'  
+          content: '<a style="color:blue;" href="https://calexicochronicle.com/2022/12/30/el-centro-hosts-dog-park-groundbreaking/"> El Centro Hosts Dog Park Groundbreaking</a>'  
           }, 
           {
           coords : {lat: 33.8734, lng: -115.9010}, 
-          content: '<p style="color:blue;">Backpacking Permits For Joshua Tree National Park Available Online</p>'  
+          content: '<a style="color:blue;" href="https://www.nationalparkstraveler.org/2023/02/backpacking-permits-joshua-tree-national-park-available-online">Backpacking Permits For Joshua Tree National Park Available Online</a>'  
           },
           {
           coords : {lat: 33.1192, lng: -117.0864}, 
-          content: '<p style="color:blue;">Escondido council appoints Palomar College trustee to vacant seat</p>'  
+          content: '<a style="color:blue;" href="https://thecoastnews.com/escondido-council-appoints-palomar-college-trustee-to-vacant-seat/">Escondido council appoints Palomar College trustee to vacant seat</a>'  
           },
           {
           coords : {lat: 33.3286, lng: -115.8434}, 
-          content: '<p style="color:blue;">Salton Sea reduced inflow, the lake is shrinking and rising in salinity.</p>'  
+          content: '<a style="color:blue;" href="https://www.theguardian.com/us-news/2022/nov/29/us-spend-250m-cleanup-california-toxic-salton-sea">US to spend $250m on cleanup at California’s toxic Salton Sea</a>'  
           },
 	
         ];
