@@ -36,7 +36,7 @@
         var markers = [
           {
           coords : {lat: 32.7157, lng: -117.1611}, 
-          content: '<p style="color:blue;">Padres FanFest mayhem: Long lines, crowded concourses, and delayed entry</p>' 
+          content: '<a style="color:blue;" href="http://www.cnn.com">CNN Padres FanFest mayhem: Long lines, crowded concourses, and delayed entry</a>' 
           },
           {
           coords : {lat: 33.4934, lng: -117.1488}, 
