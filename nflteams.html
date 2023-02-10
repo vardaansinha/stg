@@ -1,0 +1,11 @@
+<script>
+   
+    const xmlhttp = new XMLHttpRequest();
+    xmlhttp.onload = function() {
+      document.getElementById("demo").innerHTML = this.responseText;
+    }
+    xmlhttp.open("GET", "/nflteams.py");
+    
+    xmlhttp.send();
+    </script>
+	<p id="demo"></p>

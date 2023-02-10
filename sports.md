@@ -40,6 +40,7 @@ def getNFLTeams():
     #print(htmltable)
     display(HTML(htmltable))
     #return render_template('nfteams.html', team=teams)
+    return htmltable
 
 getNFLTeams()
 ```
