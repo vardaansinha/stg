@@ -5,7 +5,7 @@
 
 ### NFL2
 
-```python 
+```{python} 
 def get_db_connection():
     conn = sqlite3.connect('volumes/sqlite.db')
     conn.row_factory = sqlite3.Row
