@@ -5,6 +5,17 @@
 
 ### NFL
 
+$.ajax({
+  url: "http://192.168.68.50:8086/api/nflteam/",
+  success: function(markdown){
+    // Convert the Markdown to HTML.
+    let html;
+    html = md.render(markdown);
+    // Print the HTML to #content using jQuery.
+    $("#content").html(html);
+  }
+});
+
 <table>
     <tr>
         <td>Team</td>
