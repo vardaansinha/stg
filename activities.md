@@ -36,7 +36,7 @@
         var markers = [
           {
           coords : {lat: 32.7157, lng: -117.1611}, 
-          content: '<a style="color:blue;" href="https://www.cbs8.com/article/news/local/padres-fanfest-mayhem-crowded-concourses-and-delayed-entry/509-543c588b-0eba-4c95-bb84-b3538894dd77">CNN Padres FanFest mayhem: Long lines, crowded concourses, and delayed entry</a>' 
+          content: '<a style="color:blue;" href="https://www.cbs8.com/article/news/local/padres-fanfest-mayhem-crowded-concourses-and-delayed-entry/509-543c588b-0eba-4c95-bb84-b3538894dd77">Padres FanFest mayhem: Long lines, crowded concourses, and delayed entry</a>' 
           },
           {
           coords : {lat: 33.4934, lng: -117.1488}, 
