@@ -3,7 +3,7 @@
 
 ## Shaurya Goel
 
-### NFL
+### NFL1
 
 $.ajax({
   url: "http://192.168.68.50:8086/api/nflteam/",
