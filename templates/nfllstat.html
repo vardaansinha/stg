@@ -1,0 +1,39 @@
+{% extends "layouts/base.html" %}
+{% set project = "Home" %}
+
+{% block body %}
+    <!-- Start of body content specific to page -->
+    <div class="px-5 py-5 mx-auto">
+        <h1 class="text-white"><strong>Python Home Page</strong></h1>
+        <div class="row">
+            <div class="col-4">
+                <div class="card">
+                    <div class="card-body">
+                    <h5 class="card-title">NFL Team Stats</h5>
+                    <p class="card-text">
+                        <script>
+                            const dbParam = JSON.stringify({table:"teams",limit:20});
+                            const xmlhttp = new XMLHttpRequest();
+                            xmlhttp.onload = function() {
+                              const myObj = JSON.parse(this.responseText);
+                              let text = "<table border='1'>"
+                              for (let x in myObj) {
+                                text += "<tr><td>" + myObj[x].team + "</td></tr>";
+                              }
+                              text += "</table>"    
+                              document.getElementById("demo").innerHTML = text;
+                            }
+                            xmlhttp.open("GET", "/api/nflteam/");
+                            xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                            xmlhttp.send("x=" + dbParam);
+                        </script>
+                        <p id="demo"></p>
+                    </p>
+                    <a href="#" class="btn btn-primary">Reload</a>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+{% endblock %}
