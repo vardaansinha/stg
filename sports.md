@@ -3,18 +3,29 @@
 
 ## Shaurya Goel
 
-### NFL1
+### NFL2
 
-$.ajax({
-  url: "http://192.168.68.50:8086/api/nflteam/",
-  success: function(markdown){
-    // Convert the Markdown to HTML.
-    let html;
-    html = md.render(markdown);
-    // Print the HTML to #content using jQuery.
-    $("#content").html(html);
-  }
-});
+```python 
+def get_db_connection():
+    conn = sqlite3.connect('volumes/sqlite.db')
+    conn.row_factory = sqlite3.Row
+    return conn
+
+def getNFLTeams():
+    conn = get_db_connection()
+    db_teams = conn.execute('SELECT id, _division, _team FROM NFLTeam;').fetchall()
+    conn.close()
+
+    teams = []
+    for team in db_teams:
+       team = dict(team)
+       team['content'] = markdown.markdown(team['content'])
+       teams.append(team)
+
+    return render_template('nfteams.html', notes=teams)
+
+getNFLTeams()
+```
 
 <table>
     <tr>

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} Welcome to FlaskNotes {% endblock %}</h1>
+    {% for team in teams %}
+    <div class="card">
+        <div class="card-body">
+            <span class="badge badge-primary">#{{ team['_team'] }}</span>
+            <span class="badge badge-default">{{ team['_division'] }}</span>
+            <hr>
+            <p>{{ note['content'] |safe }}</p>
+        </div>
+    </div>
+    <hr>
+    {% endfor %}
+{% endblock %}
