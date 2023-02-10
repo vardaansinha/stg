@@ -5,7 +5,7 @@
 
 ### NFL2
 
-```{python} 
+``` {python} 
 import sqlite3
 #import markdown
 from flask import Flask, render_template, request, flash, redirect, url_for
