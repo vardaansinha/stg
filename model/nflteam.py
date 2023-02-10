@@ -220,7 +220,7 @@ class NFLTeam(db.Model):
     def playoffs(self):
         return self._playoffs
     
-    @pointsagainst.setter
+    @playoffs.setter
     def playoffs(self, playoffs):
        self._playoffs = playoffs
 
