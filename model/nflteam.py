@@ -54,12 +54,12 @@ class NFLTeam(db.Model):
         self._gameswon = gameswon
         self._gameslost = gameslost
         self._gamesdrawn = gamesdrawn
-        self. _gamesplayedathome = gamesplayedathome
+        self._gamesplayedathome = gamesplayedathome
         self._gamesplayedaway = gamesplayedaway
         self._gameswonathome = gameswonathome
         self._gameslostathome = gameslostathome
         self._gameswonaway = gameswonaway
-        self. _gameslostaway = gameslostaway
+        self._gameslostaway = gameslostaway
         self._gamesplayed5 = gamesplayed5
         self._gameswon5 = gameswon5
         self._gameslost5 = gameslost5
@@ -216,6 +216,14 @@ class NFLTeam(db.Model):
        self._pointsinfourthquarter = pointsinfourthquarter
 
 
+    @property
+    def playoffs(self):
+        return self._playoffs
+    
+    @pointsagainst.setter
+    def playoffs(self, playoffs):
+       self._playoffs = playoffs
+
     def __str__(self):
         return json.dumps(self.read())
 
@@ -239,11 +247,24 @@ class NFLTeam(db.Model):
 
     def read(self):
         return {
-            "team": self.team,
-            "gamesplayed": self.gamesplayed,
-            "gameswon": self.gameswon,
-            "gameslost": self.gameslost
-            
+            "division" : self.division,
+            "team" : self.team,
+            "gamesplayed" : self.gamesplayed,
+            "gameswon" : self.gameswon,
+            "gameslost" : self.gameslost,
+            "gamesdrawn" : self.gamesdrawn,
+            "gamesplayedathome" : self.gamesplayedathome,
+            "gamesplayedaway" : self.gamesplayedaway,
+            "gameswonathome" : self.gameswonathome,
+            "gameslostathome" : self.gameslostathome,
+            "gameswonaway" : self.gameswonaway,
+            "gameslostaway" : self.gameslostaway,
+            "gamesplayed5" : self.gamesplayed5,
+            "gameswon5" : self.gameswon5,
+            "gameslost5" : self.gameslost5,
+            "pointsfor" : self.pointsfor,
+            "pointsagainst" : self.pointsagainst,
+            "playoffs" : self.playoffs
         }
 
 
