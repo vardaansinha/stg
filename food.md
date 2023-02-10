@@ -56,7 +56,7 @@ function question(){
 }
 
 function test(ans){
-  ans = useranswer.value;
+  ans = parseInt(useranswer.value);
   
   if (ans == (questoutANS)) {
   
@@ -66,7 +66,12 @@ function test(ans){
 (questoutANS);
   
 
-  } else {
+  } else if (isNaN(ans))  { //is it a number?
+
+    alert("only numbers are allowed!")
+  }
+
+  else {
   
   alert("wrong answer!");
   x = 1
