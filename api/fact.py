@@ -16,9 +16,9 @@ class factAPI:
             
             ''' Avoid garbage in, error checking '''
             # validate name
-            date = body.get('')
-            if date is None or len(date) < 2:
-                return {'message': f'Date is missing, or is less than 2 characters'}, 210
+            fact = body.get('')
+            if fact is None or len(fact) < 2:
+                return {'message': f'Fact is missing, or is less than 2 characters'}, 210
             
             # look for score, type
             score = body.get('score')
@@ -45,7 +45,7 @@ class factAPI:
     class _Read(Resource):
         def get(self):
             facts = FactDay.query.all()    # read/extract all users from database
-            json_ready = [team.read() for date in dates]  # prepare output in json
+            json_ready = [team.read() for fact in facts]  # prepare output in json
             return jsonify(json_ready)  # jsonify creates Flask response object, more specific to APIs than json.dumps
 
     # building RESTapi endpoint
