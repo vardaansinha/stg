@@ -40,6 +40,7 @@ src="data4justin'sfeature.js"> // get data from outside file
 </script>
 
 <script>
+
 function question(){
   random3 = Math.floor(Math.random() * quest.length); 
 
