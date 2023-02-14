@@ -33,6 +33,12 @@ def index():
 def nflteams():
     return render_template("nflstat.html")
 
+@app.route('/facts')  
+def facts():
+    return render_template("facts.html")
+
+
+
 @app.before_first_request
 def activate_job():
     initNFLTeams()
@@ -46,3 +52,4 @@ if __name__ == "__main__":
     app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///volumes/sqlite.db'
     app.run(debug=True, host="0.0.0.0", port="8086")
     initNFLTeams()
+    initFactDay()
