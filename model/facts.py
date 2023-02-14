@@ -1,4 +1,3 @@
-""" database dependencies to support sqliteDB examples """
 from random import randrange
 from datetime import date
 import os, base64
@@ -8,57 +7,51 @@ from __init__ import app, db
 from sqlalchemy.exc import IntegrityError
 from werkzeug.security import generate_password_hash, check_password_hash
 
-
-'''Class Setup '''
-
-    # Defining the NFLNews class to manage actions in the 'news' table
-
-class FactDay(db.Model):
-    __tablename__ = 'Facts'  
-
-    # Defining the Object Variable
-
+class FactofDay(db.Model):
+    __tablename__ = 'FactDay'  
+    
     id = db.Column(db.Integer, primary_key=True)
-    _date = db.Column(db.String(255), unique=False, nullable=False)
     _fact = db.Column(db.String(255), unique=True, nullable=False)
+    _date = db.Column(db.String(255), unique=True, nullable=False)
+    _year = db.Column(db.Integer, primary_key=False)
     
-    
-
-    # Constructor of a NFLTeam object, initializes the instance variables within object (self)
-
-    def __init__(self, date, fact):
+    def __init__(self, fact, date, year):
+        self._fact = fact
         self._date = date
-        self._fact = fact   # variables with "own"" prefix become part of the object
-  
-
-    """Setter and Getter Methods for all Variables"""  
-
-    @property
-    def date(self):
-        return self._date
-
-    @date.setter
-    def date(self, date):
-        self._date = data
-
+        self._year = year
+        
     @property
     def fact(self):
         return self._fact
     
     @fact.setter
     def fact(self, fact):
-        self._fact = fact
+       self._fact = fact
     
+    @property
+    def date(self):
+        return self._date
+    
+    @date.setter
+    def date(self, date):
+       self._date = date
+    
+    @property
+    def year(self):
+        return self._year
+    
+    @year.setter
+    def year(self, year):
+       self._year = year
     
     def __str__(self):
         return json.dumps(self.read())
 
-
-    """CRUD METHODS """  
     def create(self):
         try:
+            
             db.session.add(self)  
-            db.session.commit()  # SqlAlchemy "unit of work pattern" requires a manual commit
+            db.session.commit() 
             return self
         except IntegrityError:
             db.session.remove()
@@ -68,49 +61,34 @@ class FactDay(db.Model):
         db.session.delete(self)
         db.session.commit()
         return None
-
-
+    
     def read(self):
         return {
-            "date" : self.date,
             "fact" : self.fact,
+            "date" : self.date,
+            "year" : self.year,
         }
-
-
-
-"""Database Creation and Testing """
-
-# Builds working data for testing
 
 def initFactDay():
     print("Creating test data")
     """Create database and tables"""
     db.create_all()
     """Tester data for table"""
-
-
-    f1 = FactDay(date = "February 13th", fact = "The Confederacy approves the recruitment of slaves as soldiers, as long as the approval of their owners is gained.")
-    f2 = FactDay(date = "February 14th", fact = "Arizona becomes the 48th state of the union.")
-    f3 = FactDay(date = "February 15th", fact = "Canada Maple Leaf Adopted")
-    f4 = FactDay(date = "February 16th", fact = "US First 911 Emergency Telephone Service")
     
-<<<<<<< HEAD
     f1 = FactofDay(fact = "Arizona became the 48th state in the Union.", date = "February 14th", year = 1912)
     f2 = FactofDay(fact = "The USS Maine Sank after an explosion in Havana Harbor", date = "February 15th", year = 1898)
     f3 = FactofDay(fact = "Power in Cuba was seized by Fidel Castro", date = "February 16th", year = 1959)
     f4 = FactofDay(fact = "Jeffrey Dahmer Sentenced to 15 Consecutive Life Sentences", date = "February 17th", year = 1992)
-=======
-    factsofficial = [f1, f2, f3, f4]
->>>>>>> caeadb3d655a4fd56fb29de136381d94460f32d1
     
+    factlist = [f1, f2, f3, f4]
     
-    """Builds sample user/note(s) data"""
-    for fact in factsofficial:
-          try:
-              date.create()
-          except IntegrityError:
-              '''fails with bad or duplicate data'''
-              db.session.remove()
-              print(f"Records exist, duplicate email, or error: {date.uid}")
+    for fact in factlist:
+        try:
+            fact.create()
+        except IntegrityError:
+            '''fails with bad or duplicate data'''
+            db.session.remove()
+            print(f"Fact is invalid: {fact.uid}")
 
 initFactDay()
+    

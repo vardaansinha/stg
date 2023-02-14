@@ -42,8 +42,7 @@ def facts():
 def activate_job():
     initNFLTeams()
     initCool()
-    # initFactDay()
-   # initBreakingNews()
+    initFactDay()
 
 
 # this runs the application on the development server

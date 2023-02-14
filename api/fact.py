@@ -1,7 +1,7 @@
 from flask import Blueprint, request, jsonify
 from flask_restful import Api, Resource # used for REST API building
 from datetime import datetime
-from model.facts import FactDay
+from model.facts import FactofDay
 
 fact_api = Blueprint('fact_api', __name__, url_prefix='/api/fact')
 
@@ -16,7 +16,7 @@ class factAPI:
             
             ''' Avoid garbage in, error checking '''
             # validate name
-            fact = body.get('')
+            fact = body.get('facts')
             if fact is None or len(fact) < 2:
                 return {'message': f'Fact is missing, or is less than 2 characters'}, 210
             
@@ -30,7 +30,7 @@ class factAPI:
             #    return {'message': f'ID is missing, or is less than 2 characters'}, 210
             #''' #1: Key code block, setup USER OBJECT '''
             
-            uo = FactDay(date=date, fact=fact)
+            uo = fact(facts=fact, score=score, type=type)
             
             ''' Additional garbage error checking '''
             
@@ -44,8 +44,8 @@ class factAPI:
 
     class _Read(Resource):
         def get(self):
-            facts = FactDay.query.all()    # read/extract all users from database
-            json_ready = [team.read() for fact in facts]  # prepare output in json
+            facts = FactofDay.query.all()    # read/extract all users from database
+            json_ready = [fact.read() for fact in facts]  # prepare output in json
             return jsonify(json_ready)  # jsonify creates Flask response object, more specific to APIs than json.dumps
 
     # building RESTapi endpoint
