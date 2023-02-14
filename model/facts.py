@@ -98,7 +98,7 @@ def initFactDay():
     
     
     """Builds sample user/note(s) data"""
-      for date in factsofficial:
+    for date in factsofficial:
           try:
               date.create()
           except IntegrityError:
