@@ -8,6 +8,8 @@ score_api = Blueprint('score_api', __name__,
                    url_prefix='/api/scores')
 
 
+# todo: BE review, observe if API handles error conditions (ie duplicate user id)
+#Observe, UI contains inputs that are validated for garbage, data cleaned (ie validate DOB or Password)
 
  #API docs https://flask-restful.readthedocs.io/en/latest/api.html
 api = Api(score_api)
@@ -41,10 +43,10 @@ class ScoreAPI:
             # create user in database
             user = uo.create()
             # success returns json of user
-            #if user:
-                #return jsonify(user.read())
+            if user:
+                return jsonify(user.read())
             # failure returns error
-          #  return {'message': f'Processed {score}, either a format error or User ID {uid} is duplicate'}, 210
+            return {'message': f'Processed {score}, either a format error or User ID {uid} is duplicate'}, 210
 
     class _Read(Resource):
         def get(self):

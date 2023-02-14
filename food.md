@@ -168,6 +168,31 @@ document.getElementById("score").innerHTML = (sCore1);
 
  <!-- <p><button onclick="store_data()">add names and score</button></p> -->
 
+<form action="javascript:create_user()">
+ <p><label>
+        add a new fact:
+        <input type="text" name="test" id="testr" required>
+    </label></p>
+    <p><button>Create</button></p>
+</form>
+
+<script>
+  // prepare HTML result container for new output
+  const resultContainer = document.getElementById("result");
+  // prepare URL's to allow easy switch from deployment and localhost
+  const url = "http://localhost:8086/api/scores"
+  //const url = "https://flask.nighthawkcodingsociety.com/api/users"
+  const create_fetch = url + '/create';
+  const read_fetch = url + '/';
+
+read_scores();
+
+
+
+
+</script>
+
+
 </body>
 
 </html>

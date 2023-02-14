@@ -63,6 +63,11 @@ class test(db.Model):
         except IntegrityError:
             db.session.remove()
             return None
+    
+    def delete(self):
+        db.session.delete(self)
+        db.session.commit()
+        return None
    
     def read(self):
         return {
@@ -93,6 +98,12 @@ def initCool():
 
     players = [t1, t2, t3]
     for i in players:
-        db.session.add(i) 
-        db.session.commit()
+        try:
+            i.create()
+        except IntegrityError:
+            '''fails with bad or duplicate data'''
+            db.session.remove()
+            print(f"Records exist, duplicate email, or error")
+
+       
 
