@@ -7,17 +7,29 @@ from flask import render_template  # import render_template from "public" flask 
 from __init__ import app  # Definitions initialization
 from model.nflteam import initNFLTeams
 from model.scores import initCool
+<<<<<<< HEAD
 #from model.facts import initFactDay
+=======
+# from model.facts import initFactDay
+>>>>>>> 6fb1fff4138dee83618a58c35b8eff43e5b76e36
 
 # setup APIs
 from api.nflteam import nflteam_api # Blueprint import api definition
 from api.score import score_api # Blueprint import api definition
+<<<<<<< HEAD
 #from api.fact import fact_api
+=======
+# from api.fact import fact_api
+>>>>>>> 6fb1fff4138dee83618a58c35b8eff43e5b76e36
 
 # register URIs
 app.register_blueprint(nflteam_api) # register app pages
 app.register_blueprint(score_api)
+<<<<<<< HEAD
 #app.register_blueprint(fact_api)
+=======
+# app.register_blueprint(fact_api)
+>>>>>>> 6fb1fff4138dee83618a58c35b8eff43e5b76e36
 
 
 @app.errorhandler(404)  # catch for URL not found
