@@ -11,7 +11,9 @@ from werkzeug.security import generate_password_hash, check_password_hash
 
 '''Class Setup '''
 
-    # Defining the NFLNews class to manage actions in the 'news' table
+##@staticmethod
+##def outside_class_age_diff(NFLTeams1, NFLTeams2):
+       ## return abs(person_a. - person_b.age)
 
 class NFLTeam(db.Model):
     __tablename__ = 'NFLTeam'  
@@ -243,7 +245,7 @@ class NFLTeam(db.Model):
         db.session.delete(self)
         db.session.commit()
         return None
-
+        
 
     def read(self):
         return {
@@ -266,7 +268,6 @@ class NFLTeam(db.Model):
             "pointsagainst" : self.pointsagainst,
             "playoffs" : self.playoffs
         }
-
 
 
 """Database Creation and Testing """
