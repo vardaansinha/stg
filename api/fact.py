@@ -35,10 +35,10 @@ class factAPI:
             ''' Additional garbage error checking '''
             
             # create nfl news in database
-            facts = uo.create()
+            fact = uo.create()
             # success returns json of nfl news
-            if facts:
-                return jsonify(facts.read())
+            if fact:
+                return jsonify(fact.read())
             # failure returns error
             return {'message': f'Processed news error'}, 210
 
