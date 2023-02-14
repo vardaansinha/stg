@@ -36,7 +36,7 @@ def nflteams():
 def activate_job():
     initNFLTeams()
     initCool()
-    initFactDay()
+    # initFactDay()
    # initBreakingNews()
 
 
