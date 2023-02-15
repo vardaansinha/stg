@@ -1,4 +1,4 @@
-<h1>Education: Cool Information</h1>
+<h1>On This Day: What Happened?</h1>
 
 <html>
 <body>
