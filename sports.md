@@ -76,4 +76,4 @@ read_users();
   }
 
 
-<script>
+</script>
