@@ -5,8 +5,7 @@
 
 <table style="width:100%">
   <tr>
-    <th>random fact</th>
-    <th>random word</th>
+    <th>Interesting Event that has happened on a day of this Week</th>
   </tr>
 
   <tr>
