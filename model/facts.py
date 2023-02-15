@@ -49,7 +49,6 @@ class FactofDay(db.Model):
 
     def create(self):
         try:
-            
             db.session.add(self)  
             db.session.commit() 
             return self
@@ -79,10 +78,10 @@ def initFactDay():
     f2 = FactofDay(fact = "The USS Maine Sank after an explosion in Havana Harbor", date = "February 15th", year = 1898)
     f3 = FactofDay(fact = "Power in Cuba was seized by Fidel Castro", date = "February 16th", year = 1959)
     f4 = FactofDay(fact = "Jeffrey Dahmer Sentenced to 15 Consecutive Life Sentences", date = "February 17th", year = 1992)
-    f5 = FactofDay(fact = "Jeffrey Dahmer Sentenced to 15 Consecutive Life Sentences", date = "February 17th", year = 1992)
     
-    factlist = [f1, f2, f3, f4, f5]
+    factlist = [f1, f2, f3, f4]
     
+
     for fact in factlist:
         try:
             fact.create()
