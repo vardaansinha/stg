@@ -39,14 +39,6 @@ function reset() {
 
 </script> 
 
-<button onclick="reset()">Click here to refresh for new facts that happened this week!</button>
-
-
-<script>
-
-</script>
-
-
 <table>
   <thead>
   <tr>
