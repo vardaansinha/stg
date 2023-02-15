@@ -30,7 +30,7 @@ class factAPI:
             #    return {'message': f'ID is missing, or is less than 2 characters'}, 210
             #''' #1: Key code block, setup USER OBJECT '''
             
-            uo = fact(facts=fact, score=score, type=type)
+            uo = FactofDay(facts=fact, score=score, type=type)
             
             ''' Additional garbage error checking '''
             
