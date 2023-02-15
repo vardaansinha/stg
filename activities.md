@@ -153,7 +153,7 @@
             const td = document.createElement("td");
             td.innerHTML = errorMsg;
             tr.appendChild(td);
-            resultContainer.appendChild(tr);
+            //resultContainer.appendChild(tr);
             return;
         }
         // valid response will have json data
@@ -172,7 +172,7 @@
       const td = document.createElement("td");
       td.innerHTML = err;
       tr.appendChild(td);
-      resultContainer.appendChild(tr);
+      //resultContainer.appendChild(tr);
     });
   }
 
