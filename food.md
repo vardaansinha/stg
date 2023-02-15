@@ -193,6 +193,20 @@ document.getElementById("score").innerHTML = (sCore1);
 </form>
 
 <script>
+
+  
+var requestOptions = {
+  method: 'GET',
+  redirect: 'follow'
+};
+
+fetch("http://172.20.10.82:8086/api/scores/", requestOptions)
+  .then(response => response.text())
+  .then(result => console.log(result))
+  .catch(error => console.log('error', error));
+
+
+
   // prepare HTML result container for new output
   const resultContainer = document.getElementById("result");
   // prepare URL's to allow easy switch from deployment and localhost
@@ -246,9 +260,27 @@ document.getElementById("score").innerHTML = (sCore1);
       tr.appendChild(td);
       resultContainer.appendChild(tr);
     });
+      
+   
+  } 
+  function add_row(data) {
+    const tr = document.createElement("tr");
+    const uid = document.createElement("td");
+   
+  
+
+    // obtain data that is specific to the API
+    uid.innerHTML = data.uid; 
+    score.innerHTML = data.score; 
+ 
+
+    // add HTML to container
+    tr.appendChild(uid);
+    tr.appendChild(score);
+   
+
+    resultContainer.appendChild(tr);
   }
-
-
 
 
 </script>
