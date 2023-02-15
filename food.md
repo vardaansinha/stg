@@ -168,6 +168,22 @@ document.getElementById("score").innerHTML = (sCore1);
 
  <!-- <p><button onclick="store_data()">add names and score</button></p> -->
 
+
+
+<table>
+  <thead>
+  <tr>
+    <th>User ID</th>
+    <th>facts</th>
+  </tr>
+  </thead>
+  <tbody id="result">
+    <!-- javascript generated data -->
+  </tbody>
+</table>
+
+
+
 <form action="javascript:create_user()">
  <p><label>
         add a new fact:
@@ -192,7 +208,7 @@ document.getElementById("score").innerHTML = (sCore1);
     // prepare fetch options
     const read_options = {
       method: 'GET', // *GET, POST, PUT, DELETE, etc.
-      mode: 'no-cors', // no-cors, *cors, same-origin; I CHANGED TO NO-CORS BTW
+      mode: 'cors', // no-cors, *cors, same-origin
       cache: 'default', // *default, no-cache, reload, force-cache, only-if-cached
       credentials: 'omit', // include, *same-origin, omit
       headers: {
