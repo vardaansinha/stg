@@ -1,37 +1,52 @@
 # Sports
 
+<html>
+<body>
+
+<table style="width:100%" id="table">
+  <tr>
+    <th>Check for your Favorite NFL Team! Your favorite team's statistics will show the number of games they have played, their overall regular season record, and different statistics about the number of points they have scored and allowed. The last column shows if your team made the playoffs!</th>
+  </tr>
+</table>
+
+
 <script>
-
- // prepare HTML result container for new output
-  const resultContainer = document.getElementById("result");
-  // prepare URL's to allow easy switch from deployment and localhost
-  const url = "http://localhost:8086/api/nflteam"
-  //const url = "https://flask.nighthawkcodingsociety.com/api/users"
-  const create_fetch = url + '/create';
-  const read_fetch = url + '/';
-
-
-var myHeaders = new Headers();
-myHeaders.append("Content-Type", "text/plain");
-
-var raw = "{'team':\"My Team\"; 'score':\"10\"; 'type':\"Type\" }";
 
 var requestOptions = {
   method: 'GET',
-  headers: myHeaders,
-  body: raw,
   redirect: 'follow'
 };
 
-fetch("http://10.8.139.110:8086/api/nflteam", requestOptions)
-  .then(response => response.text())
-  .then(result => console.log(result))
-  .catch(error => console.log('error', error))
+fetch("http://172.23.68.4:8086/api/nflteam", requestOptions)
+  .then(response => response.json())
+  .then(r => {
+	  r.forEach(ev => {
+		  const row = document.createElement("tr")
+		  const data = document.createElement("td")
+		  data.innerHTML = `${ev.team}, ${ev.division}: ${ev.gamesplayed} and ${ev.gameswon}-${ev.gameslost}: ${ev.gamesdrawn}, ${ev.gamesplayedathome}, ${ev.gamesplayedaway}, ${ev.gameswonathome}, ${ev.gameslostathome}, ${ev.gameswonaway}, ${ev.gamesplayed5}, ${ev.gameslost5}, ${ev.pointsfor}, ${ev.pointsagainst}, ${ev.playoffs}: Playoff Berth`
+		  row.appendChild(data)
+		  document.getElementById("table").appendChild(row)
+	  })
+  })
+  .catch(error => console.log('error', error));
 
+function reset() {
+  window.location.reload();
+}
 
+</script>
+
+<script>
+
+const resultContainer = document.getElementById("result");
+  // prepare URL's to allow easy switch from deployment and localhost
+const url = "http://localhost:8086/api/nflteam"
+  //const url = "https://flask.nighthawkcodingsociety.com/api/users"
+const create_fetch = url + '/create';
+const read_fetch = url + '/';
 read_users();
 
-  function read_users() {
+function read_users() {
     // prepare fetch options
     const read_options = {
       method: 'GET', // *GET, POST, PUT, DELETE, etc.
@@ -74,6 +89,4 @@ read_users();
       resultContainer.appendChild(tr);
     });
   }
-
-
 </script>
