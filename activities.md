@@ -95,6 +95,117 @@
 <br/>
 <br/>
 <div id="map1"></div>
+<br/>
+<br/>
+
+<p>Breaking News API</p>
+
+<table>
+  <thead>
+  <tr>
+    <th>City</th>
+    <th>Day</th>
+    <th>Network</th>
+    <th>Title</th>
+    <th>Link</th>
+  </tr>
+  </thead>
+  <tbody id="result">
+    <!-- javascript generated data -->
+  </tbody>
+</table>
+
+<script>
+  // prepare HTML result container for new output
+  const resultContainer = document.getElementById("result");
+  // prepare URL's to allow easy switch from deployment and localhost
+  const url = "http://localhost:8086/api/breakingnews"
+  //const url = "https://flask.nighthawkcodingsociety.com/api/users"
+  const create_fetch = url + '/create';
+  const read_fetch = url + '/';
+
+  // Load users on page entry
+  read_users();
+
+
+  // Display User Table, data is fetched from Backend Database
+  function read_users() {
+    // prepare fetch options
+    const read_options = {
+      method: 'GET', // *GET, POST, PUT, DELETE, etc.
+      mode: 'cors', // no-cors, *cors, same-origin
+      cache: 'default', // *default, no-cache, reload, force-cache, only-if-cached
+      credentials: 'omit', // include, *same-origin, omit
+      headers: {
+        'Content-Type': 'application/json'
+      },
+    };
+
+    // fetch the data from API
+    fetch(read_fetch, read_options)
+      // response is a RESTful "promise" on any successful fetch
+      .then(response => {
+        // check for response errors
+        if (response.status !== 200) {
+            const errorMsg = 'Database read error: ' + response.status;
+            console.log(errorMsg);
+            const tr = document.createElement("tr");
+            const td = document.createElement("td");
+            td.innerHTML = errorMsg;
+            tr.appendChild(td);
+            resultContainer.appendChild(tr);
+            return;
+        }
+        // valid response will have json data
+        response.json().then(data => {
+            console.log(data);
+            for (let row in data) {
+              console.log(data[row]);
+              add_row(data[row]);
+            }
+        })
+    })
+    // catch fetch errors (ie ACCESS to server blocked)
+    .catch(err => {
+      console.error(err);
+      const tr = document.createElement("tr");
+      const td = document.createElement("td");
+      td.innerHTML = err;
+      tr.appendChild(td);
+      resultContainer.appendChild(tr);
+    });
+  }
+
+  function add_row(data) {
+    const tr = document.createElement("tr");
+    const city = document.createElement("td");
+    const day = document.createElement("td");
+    const network = document.createElement("td")
+    const title = document.createElement("td");
+    const link = document.createElement("td");
+  
+
+    // obtain data that is specific to the API
+    city.innerHTML = data.city; 
+    day.innerHTML = data.day; 
+    network.innerHTML = data.network;
+    title.innerHTML = data.title; 
+    link.innerHTML = data.link; 
+
+    // add HTML to container
+    tr.appendChild(city);
+    tr.appendChild(day);
+    tr.appendChild(network);
+    tr.appendChild(title);
+    tr.appendChild(link);
+
+    resultContainer.appendChild(tr);
+  }
+
+</script>
+		
+<br/>
+<br/>	
 ## Breaking News
 > Click below to refresh News.
 
