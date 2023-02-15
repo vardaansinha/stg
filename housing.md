@@ -7,20 +7,22 @@
   <tr>
     <th>Interesting Event that has happened on a day of this Week</th>
   </tr>
-
+  <tr>
+    <td id = "a">no facts?</td>
+  </tr>
   <tr>
 </tr>
 </table>
 
 
 
- <script type="text/javascript" 
-src="data4vardaan'sfeature.js"> // get data from outside file
+<script type="text/javascript" src="data4vardaan'sfeature.js"> // get data from outside file
 
 </script>
 
 <script>
 
+random = Math.floor(Math.random() * events.length);
 
 eventout = (random, events[random]) //assign random 
 
@@ -35,7 +37,7 @@ function reset() {
 
 </script> 
 
-<button onclick="reset()">Click here to refresh for new facts!</button>
+<button onclick="reset()">Click here to refresh for new facts that happened this week!</button>
 
 
 
@@ -43,7 +45,7 @@ function reset() {
   <thead>
   <tr>
     <th>User ID</th>
-    <th>New Fact</th>
+    <th>New Fact for this Week</th>
   </tr>
   </thead>
   <tbody id="result">
@@ -55,10 +57,10 @@ function reset() {
 
 <form action="javascript:create_user()">
  <p><label>
-        add a new fact:
+        Tell Us Something that Happened on Your Favorite Day! 
         <input type="text" name="test" id="testr" required>
     </label></p>
-    <p><button>Create</button></p>
+    <p><button>Add</button></p>
 </form>
 
 <script>
