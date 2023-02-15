@@ -3,31 +3,33 @@
 <html>
 <body>
 
-<table style="width:100%">
+<table style="width:100%" id="table">
   <tr>
     <th>Interesting Event that has happened on a day of this Week</th>
   </tr>
-  <tr>
-    <td id = "a">no facts?</td>
-  </tr>
-  <tr>
-</tr>
 </table>
 
 
-
-<script type="text/javascript" src="data4vardaan'sfeature.js"> // get data from outside file
-
-</script>
-
 <script>
 
-random = Math.floor(Math.random() * events.length);
 
-eventout = (random, events[random]) //assign random 
+var requestOptions = {
+  method: 'GET',
+  redirect: 'follow'
+};
 
-
-document.getElementById("a").innerHTML = (eventout); 
+fetch("http://172.23.68.4:8086/api/fact", requestOptions)
+  .then(response => response.json())
+  .then(r => {
+	r.forEach(ev => {
+		const row = document.createElement("tr")
+		const data = document.createElement("td")
+		data.innerHTML = `${ev.date}, ${ev.year}: ${ev.fact}`
+		row.appendChild(data)
+		document.getElementById("table").appendChild(row)
+	})
+  })
+  .catch(error => console.log('error', error))
 
 
 function reset() {
@@ -39,6 +41,10 @@ function reset() {
 
 <button onclick="reset()">Click here to refresh for new facts that happened this week!</button>
 
+
+<script>
+
+</script>
 
 
 <table>
@@ -53,29 +59,17 @@ function reset() {
   </tbody>
 </table>
 
-
-
-<form action="javascript:create_user()">
- <p><label>
-        Tell Us Something that Happened on Your Favorite Day! 
-        <input type="text" name="test" id="testr" required>
-    </label></p>
-    <p><button>Add</button></p>
-</form>
-
 <script>
-  // prepare HTML result container for new output
-  const resultContainer = document.getElementById("result");
+
+const resultContainer = document.getElementById("result");
   // prepare URL's to allow easy switch from deployment and localhost
-  const url = "http://localhost:8086/api/fact"
+const url = "http://localhost:8086/api/fact"
   //const url = "https://flask.nighthawkcodingsociety.com/api/users"
-  const create_fetch = url + '/create';
-  const read_fetch = url + '/';
+const create_fetch = url + '/create';
+const read_fetch = url + '/';
+read_users();
 
-
-  read_users();
-
-  function read_users() {
+function read_users() {
     // prepare fetch options
     const read_options = {
       method: 'GET', // *GET, POST, PUT, DELETE, etc.
@@ -118,9 +112,15 @@ function reset() {
       resultContainer.appendChild(tr);
     });
   }
-
 </script>
 
+<form action="javascript:create_user()">
+ <p><label>
+        Tell Us Something that Happened on Your Favorite Day! 
+        <input type="text" name="test" id="testr" required>
+    </label></p>
+    <p><button>Add</button></p>
+</form>
 
 </body>
 
