@@ -98,16 +98,14 @@
 </script>
 <br/>
 
-<h2>Breaking News API</h2>
-
+<h1>Breaking News!!</h1>
+<br/>
 <table id = "table">
   <thead>
   <tr>
     <th>City</th>
-    <th>Day</th>
     <th>Network</th>
-    <th>Title</th>
-    <th>Link</th>
+    <th>News</th>
   </tr>
   </thead>
   <tbody id="result">
@@ -132,21 +130,19 @@ fetch("http://172.25.57.176:8086/api/breakingnews/", requestOptions)
     cityData.innerHTML = `${ev.city}`
 		row.appendChild(cityData)
 
+  /*
     const dayData = document.createElement("td")
 		dayData.innerHTML = `${ev.day}`
 		row.appendChild(dayData)
+  */
 
     const networkData = document.createElement("td")
 		networkData.innerHTML = `${ev.network}`
 		row.appendChild(networkData)
 
     const titleData = document.createElement("td")
-		titleData.innerHTML = `${ev.title}`
+		titleData.innerHTML = `<a href=${ev.link}> ${ev.title} </a>`
 		row.appendChild(titleData)
-
-    const linkData = document.createElement("td")
-		linkData.innerHTML = `${ev.link}`
-		row.appendChild(linkData)
 
 		document.getElementById("table").appendChild(row)
 	})
