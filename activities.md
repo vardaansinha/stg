@@ -17,11 +17,15 @@
 }
 </style>
 
+
+<!-- Hide maps for now
+
 ## Breaking News with Maps API
 <div id="map"></div>
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyChhAisKAHMljl0nrnmCOL4zm0Ek6KlK2U&callback=initMap&v=weekly" defer></script>
-    
+-->
+
 <script>                              
       // Initialize and add the map
       function initMap() {
@@ -88,19 +92,15 @@
           }
         }                                          
       }
-
-      window.initMap = initMap;
+      
+      // Hide Google Maps for now
+      //window.initMap = initMap;
 </script>
 <br/>
-<br/>
-<br/>
-<div id="map1"></div>
-<br/>
-<br/>
 
-<p>Breaking News API</p>
+<h2>Breaking News API</h2>
 
-<table>
+<table id = "table">
   <thead>
   <tr>
     <th>City</th>
@@ -116,6 +116,44 @@
 </table>
 
 <script>
+
+var requestOptions = {
+  method: 'GET',
+  redirect: 'follow'
+};
+
+fetch("http://172.25.57.176:8086/api/breakingnews/", requestOptions)
+  .then(response => response.json())
+  .then(r => {
+	r.forEach(ev => {
+		const row = document.createElement("tr")
+		const cityData = document.createElement("td")
+		//cityData.innerHTML = `${ev.city}, ${ev.day}, ${ev.network}, ${ev.title}, ${ev.link}`
+    cityData.innerHTML = `${ev.city}`
+		row.appendChild(cityData)
+
+    const dayData = document.createElement("td")
+		dayData.innerHTML = `${ev.day}`
+		row.appendChild(dayData)
+
+    const networkData = document.createElement("td")
+		networkData.innerHTML = `${ev.network}`
+		row.appendChild(networkData)
+
+    const titleData = document.createElement("td")
+		titleData.innerHTML = `${ev.title}`
+		row.appendChild(titleData)
+
+    const linkData = document.createElement("td")
+		linkData.innerHTML = `${ev.link}`
+		row.appendChild(linkData)
+
+		document.getElementById("table").appendChild(row)
+	})
+  })
+  .catch(error => console.log('error', error))
+
+
   // prepare HTML result container for new output
   const resultContainer = document.getElementById("result");
   // prepare URL's to allow easy switch from deployment and localhost
@@ -125,7 +163,7 @@
   const read_fetch = url + '/';
 
   // Load users on page entry
-  read_users();
+  //read_users();
 
 
   // Display User Table, data is fetched from Backend Database
@@ -133,7 +171,7 @@
     // prepare fetch options
     const read_options = {
       method: 'GET', // *GET, POST, PUT, DELETE, etc.
-      mode: 'cors', // no-cors, *cors, same-origin
+      mode: 'no-cors', // no-cors, *cors, same-origin
       cache: 'default', // *default, no-cache, reload, force-cache, only-if-cached
       credentials: 'omit', // include, *same-origin, omit
       headers: {
@@ -146,14 +184,14 @@
       // response is a RESTful "promise" on any successful fetch
       .then(response => {
         // check for response errors
-        if (response.status !== 200) {
+        if (response.status == 205) {
             const errorMsg = 'Database read error: ' + response.status;
             console.log(errorMsg);
             const tr = document.createElement("tr");
             const td = document.createElement("td");
             td.innerHTML = errorMsg;
             tr.appendChild(td);
-            //resultContainer.appendChild(tr);
+            resultContainer.appendChild(tr);
             return;
         }
         // valid response will have json data
@@ -292,7 +330,7 @@ function getNews() {
     <th>Actions</th>
   </tr>
   </thead>
-  <tbody id="table">
+  <tbody id="tableCreate">
     <!-- javascript generated data -->
   </tbody>
 </table>
@@ -320,7 +358,7 @@ jsonStr = '[{"_name": "Bolsonaro supporters storm Brazilian Congress.", "_uid": 
 glob = 1;
 
 function createUser() {
-var Table = document.getElementById("table");
+var Table = document.getElementById("tableCreate");
 Table.innerHTML = "";
 
     name = document.getElementById("name").value;
@@ -345,7 +383,7 @@ Table.innerHTML = "";
     
 function showRows(data) {
 // prepare HTML result container for new output
-    const table = document.getElementById("table");
+    const table = document.getElementById("tableCreate");
     
     data.forEach(user => {
     // build a row for each user
