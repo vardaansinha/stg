@@ -23,8 +23,8 @@ var requestOptions = {
 };
 
 
-//fetch("http://172.23.68.4:8086/api/breakingnews/", requestOptions)
-fetch("http://localhost:8086/api/breakingnews/", requestOptions)
+fetch("https://fnvs.duckdns.org/api/breakingnews/", requestOptions)
+//fetch("http://localhost:8086/api/breakingnews/", requestOptions)
   .then(response => response.json())
   .then(r => {
     r.forEach(ev => {
@@ -54,7 +54,7 @@ function reset() {
 <script>
 const resultContainer = document.getElementById("result");
   // prepare URL's to allow easy switch from deployment and localhost
-const url = "http://localhost:8086/api/breakingnews"
+const url = "https://fnvs.duckdns.org/api/breakingnews/"
 const create_fetch = url + '/create';
 const read_fetch = url + '/';
 read_users();
@@ -144,7 +144,7 @@ function read_users() {
         },
     };
 
-  fetch("http://localhost:8086/api/breakingnews/create", requestOptions)
+  fetch("https://fnvs.duckdns.org/api/breakingnews/create", requestOptions)
     .then(response  => {
        if (response.status == 200) {
           const errorMsg = 'POST SUCCESS: ' + response.status;
