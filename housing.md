@@ -18,7 +18,7 @@ var requestOptions = {
   redirect: 'follow'
 };
 
-fetch("http://172.23.68.4:8086/api/fact", requestOptions)
+fetch("https://fnvs.duckdns.org/api/fact", requestOptions)
   .then(response => response.json())
   .then(r => {
 	r.forEach(ev => {
@@ -55,7 +55,7 @@ function reset() {
 
 const resultContainer = document.getElementById("result");
   // prepare URL's to allow easy switch from deployment and localhost
-const url = "http://localhost:8086/api/fact"
+const url = "https://fnvs.duckdns.org/api/fact"
   //const url = "https://flask.nighthawkcodingsociety.com/api/users"
 const create_fetch = url + '/create';
 const read_fetch = url + '/';
