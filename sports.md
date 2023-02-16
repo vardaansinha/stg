@@ -202,7 +202,7 @@
                 var t12 = document.getElementById("t12");
                 var t13 = document.getElementById("t13");
                 var t14 = document.getElementById("t14");
-                let reqData = "{\"division\":\"" + t2.value + "\",\"gamesdrawn\":\"" + t5.value + ",\"gameslostathome\":\"" + t10.value + ",\"gameslostaway\":\"" + t11.value + ",\"gamesplayed\":\"" + t3.value + ",\"gamesplayedathome\":\"" + t6.value + ",\"gamesplayedaway\":\"" + t7.value + ",\"gameswon\":\"" + t4.value + ",\"gameswonathome\":\"" + t8.value + ",\"gameswonaway\":\"" + t9.value + "4,\"playoffs\":\"" + t14.value + "\",\"pointsagainst\":\"" + t13.value + ",\"pointsfor\":\"" + t12.value + ",\"team\":\"" + t1.value + "\""};
+                let reqData = "{\"division\":\"" + t2.value + "\",\"gamesdrawn\":\"" + t5.value + ",\"gameslostathome\":\"" + t10.value + ",\"gameslostaway\":\"" + t11.value + ",\"gamesplayed\":\"" + t3.value + ",\"gamesplayedathome\":\"" + t6.value + ",\"gamesplayedaway\":\"" + t7.value + ",\"gameswon\":\"" + t4.value + ",\"gameswonathome\":\"" + t8.value + ",\"gameswonaway\":\"" + t9.value + "4,\"playoffs\":\"" + t14.value + "\",\"pointsagainst\":\"" + t13.value + ",\"pointsfor\":\"" + t12.value + ",\"team\":\"" + t1.value + "\"}";
                 // prepare fetch options
                 const read_options = {
                     method: 'POST', // *GET, POST, PUT, DELETE, etc.
