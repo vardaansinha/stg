@@ -52,5 +52,55 @@ function reset() {
 
 </script>
 		
+<br/>
+<h2>Add Breaking News!!</h2>
 
+<form action="javascript:create_user()">
+    <p><label>
+        News:
+        <input type="text" name="addnews" id="addnews" required>
+    </label></p>
+    <p><label>
+        Network:
+        <input type="text" name="addnetwork" id="addnetwork" value="CNN" required>
+    </label></p>
+    <p><label>
+        City:
+        <input type="text" name="addcity" id="addcity" value="San Diego" required>
+    </label></p>
 
+    <p>
+        <button>Input Breaking News</button>
+    </p>
+</form>
+
+<script>
+ function create_user(){
+    const body = {
+        title: document.getElementById("addnews").value,
+        network: document.getElementById("addnetwork").value,
+        city: document.getElementById("addcity").value        
+    };
+
+    const requestOptions = {
+        method: 'POST',
+        body: JSON.stringify(body),
+        headers: {
+            "content-type": "application/json",
+            'Authorization': 'Bearer my-token',
+        },
+    };
+
+  fetch("http://localhost:8086/api/breakingnews/create", requestOptions)
+    .then(response  => {
+       if (response.status == 200) {
+          const errorMsg = 'POST SUCCESS: ' + response.status;
+          console.log(errorMsg);
+          reset(); 
+          return;
+        }
+    })
+    .catch(error => console.log('error', error))
+ }
+
+</script>
