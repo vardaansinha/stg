@@ -244,6 +244,11 @@ class NFLTeam(db.Model):
         db.session.commit()
         return None
 
+    def getTeam(nflteamname):
+        result = db.session.query(NFLTeam).filter(NFLTeam._team == nflteamname)
+        for row in result:
+            return row
+        
 
     def read(self):
         return {
@@ -266,7 +271,7 @@ class NFLTeam(db.Model):
             "pointsagainst" : self.pointsagainst,
             "playoffs" : self.playoffs
         }
-
+ 
 
 
 """Database Creation and Testing """
@@ -324,4 +329,6 @@ def initNFLTeams():
             db.session.remove()
             print(f"Records exist, duplicate email, or error: {team.uid}")
 
-initNFLTeams()
+#initNFLTeams()
+
+print(NFLTeam.getTeam("Atlanta Falcons").pointsagainst)
