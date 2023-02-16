@@ -17,7 +17,7 @@ var requestOptions = {
   redirect: 'follow'
 };
 
-fetch("http://172.23.68.4:8086/api/nflteam", requestOptions)
+fetch("http://192.168.68.53:8086/api/nflteam", requestOptions)
   .then(response => response.json())
   .then(r => {
 	  r.forEach(ev => {
