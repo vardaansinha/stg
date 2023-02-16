@@ -187,6 +187,62 @@
                     document.getElementById("result").innerHTML="";
                 }
             }
+            function createTeam() {
+                var t1 = document.getElementById("t1");
+                var t2 = document.getElementById("t2");
+                var t3 = document.getElementById("t3");
+                var t4 = document.getElementById("t4");
+                var t5 = document.getElementById("t5");
+                var t6 = document.getElementById("t6");
+                var t7 = document.getElementById("t7");
+                var t8 = document.getElementById("t8");
+                var t9 = document.getElementById("t9");
+                var t10 = document.getElementById("t10");
+                var t11 = document.getElementById("t11");
+                var t12 = document.getElementById("t12");
+                var t13 = document.getElementById("t13");
+                var t14 = document.getElementById("t14");
+                let reqData = "{\"division\":\"" + t2.value + "\",\"gamesdrawn\":\"" + t5.value + ",\"gameslostathome\":\"" + t10.value + ",\"gameslostaway\":\"" + t11.value + ",\"gamesplayed\":\"" + t3.value + ",\"gamesplayedathome\":\"" + t6.value + ",\"gamesplayedaway\":\"" + t7.value + ",\"gameswon\":\"" + t4.value + ",\"gameswonathome\":\"" + t8.value + ",\"gameswonaway\":\"" + t9.value + "4,\"playoffs\":\"" + t14.value + "\",\"pointsagainst\":\"" + t13.value + ",\"pointsfor\":\"" + t12.value + ",\"team\":\"" + t1.value + "\""};
+                // prepare fetch options
+                const read_options = {
+                    method: 'POST', // *GET, POST, PUT, DELETE, etc.
+                    mode: 'cors', // no-cors, *cors, same-origin
+                    cache: 'default', // *default, no-cache, reload, force-cache, only-if-cached
+                    credentials: 'omit', // include, *same-origin, omit
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: reqData
+                };     // fetch the data from API
+                fetch(create_fetch, read_options)
+                // response is a RESTful "promise" on any successful fetch
+                .then(response => {
+                    // check for response errors
+                    if (response.status !== 200) {
+                        const errorMsg = 'Database read error: ' + response.status;
+                        console.log(errorMsg);
+                        const tr = document.createElement("tr");
+                        const td = document.createElement("td");
+                        td.innerHTML = errorMsg;
+                        tr.appendChild(td);
+                        return;
+                    }
+                    // valid response will have json data
+                    response.json().then(teams => {
+                        console.log(teams);
+                        load();
+                    })
+                }) 
+                // catch fetch errors (ie ACCESS to server blocked)
+                .catch(err => {
+                    console.error(err);
+                    const tr = document.createElement("tr");
+                    const td = document.createElement("td");
+                    td.innerHTML = err;
+                    tr.appendChild(td);
+                    resultContainer.appendChild(tr);
+                });
+            }
             load();
         </script>
         <table width="100%">
@@ -194,23 +250,23 @@
             <tr><td id="team1"></td><td id="team2"></td></tr>
             <tr><td id="team1_stats"></td><td id="team2_stats"></td></tr>
         </table>
-        <tr><td>Team</td><td><input type="text" id="t1"></td></tr>
-        <tr><td>Division</td><td><input type="text" id="t2"></td></tr>
-        <tr><td>Games Played</td><td><input type="text" id="t3"></td></tr>
-        <tr><td>Games Won</td><td><input type="text" id="t4"></td></tr>
-        <tr><td>Games Drawn</td><td><input type="text" id="t5"></td></tr>
-        <tr><td>Games Played At Home</td><td><input type="text" id="t6"></td></tr>
-        <tr><td>Games Played Away</td><td><input type="text" id="t7"></td></tr>
-        <tr><td>Games Won At Home</td><td><input type="text" id="t8"></td></tr>
-        <tr><td>Games Won Away</td><td><input type="text" id="t9"></td></tr>
-        <tr><td>Games Lost At Home</td><td><input type="text" id="t10"></td></tr>
-        <tr><td>Games Lost Away</td><td><input type="text" id="t11"></td></tr>
-        <tr><td>Points For</td><td><input type="text" id="t12"></td></tr>
-        <tr><td>Points Against</td><td><input type="text" id="t13"></td></tr>
-        <tr><td>Playoffs</td><td><input type="text" id="t14"></td></tr>
         <table width="100%">
+            <tr><td>Team</td><td><input type="text" id="t1"></td></tr>
+            <tr><td>Division</td><td><input type="text" id="t2"></td></tr>
+            <tr><td>Games Played</td><td><input type="text" id="t3"></td></tr>
+            <tr><td>Games Won</td><td><input type="text" id="t4"></td></tr>
+            <tr><td>Games Drawn</td><td><input type="text" id="t5"></td></tr>
+            <tr><td>Games Played At Home</td><td><input type="text" id="t6"></td></tr>
+            <tr><td>Games Played Away</td><td><input type="text" id="t7"></td></tr>
+            <tr><td>Games Won At Home</td><td><input type="text" id="t8"></td></tr>
+            <tr><td>Games Won Away</td><td><input type="text" id="t9"></td></tr>
+            <tr><td>Games Lost At Home</td><td><input type="text" id="t10"></td></tr>
+            <tr><td>Games Lost Away</td><td><input type="text" id="t11"></td></tr>
+            <tr><td>Points For</td><td><input type="text" id="t12"></td></tr>
+            <tr><td>Points Against</td><td><input type="text" id="t13"></td></tr>
+            <tr><td>Playoffs</td><td><input type="text" id="t14"></td></tr>
         </table>
-        <a href="#" class="btn btn-primary">Create</a>
+        <a onclick="createTeam()" class="btn btn-primary">Create</a>
         <br><br>
         <h5 class="card-title">Team Stats at a Glance</h5>
         <p id="demo"></p>
