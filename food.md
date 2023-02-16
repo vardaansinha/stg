@@ -168,6 +168,131 @@ document.getElementById("score").innerHTML = (sCore1);
 
  <!-- <p><button onclick="store_data()">add names and score</button></p> -->
 
+
+
+<table id = "table">
+  <thead>
+  <tr>
+    <th>User submitted facts here!</th>
+    <th>facts</th>
+  </tr>
+  </thead>
+  <tbody id="result">
+    <!-- javascript generated data -->
+  </tbody>
+</table>
+
+
+
+<form action="javascript:create_user()">
+ <p><label>
+        add a new fact:
+        <input type="text" name="test" id="testr" required>
+    </label></p>
+    <p><button>Create</button></p>
+</form>
+
+<script>
+
+  
+var requestOptions = {
+  method: 'GET',
+  redirect: 'follow'
+};
+
+fetch("http://172.20.10.82:8086/api/scores/", requestOptions)
+  .then(response => response.json())
+  .then(r => {
+	r.forEach(ev => {
+		const row = document.createElement("tr")
+		const data = document.createElement("td")
+		data.innerHTML = `${ev.score}`
+		row.appendChild(data)
+		document.getElementById("table").appendChild(row)
+	})
+  })
+  .catch(error => console.log('error', error))
+
+
+  // prepare HTML result container for new output
+  const resultContainer = document.getElementById("result");
+  // prepare URL's to allow easy switch from deployment and localhost
+  const url = "http://localhost:8086/api/scores"
+  //const url = "https://flask.nighthawkcodingsociety.com/api/users"
+  const create_fetch = url + '/create';
+  const read_fetch = url + '/';
+
+
+  read_users();
+
+  function read_users() {
+    // prepare fetch options
+    const read_options = {
+      method: 'GET', // *GET, POST, PUT, DELETE, etc.
+      mode: 'cors', // no-cors, *cors, same-origin
+      cache: 'default', // *default, no-cache, reload, force-cache, only-if-cached
+      credentials: 'omit', // include, *same-origin, omit
+      headers: {
+        'Content-Type': 'application/json'
+      },
+    };     // fetch the data from API
+    fetch(read_fetch, read_options)
+      // response is a RESTful "promise" on any successful fetch
+      .then(response => {
+        // check for response errors
+        if (response.status !== 200) {
+            const errorMsg = 'Database read error: ' + response.status;
+            console.log(errorMsg);
+            const tr = document.createElement("tr");
+            const td = document.createElement("td");
+            td.innerHTML = errorMsg;
+            tr.appendChild(td);
+            return;
+        }
+        // valid response will have json data
+        response.json().then(data => {
+            console.log(data);
+            for (let row in data) {
+              console.log(data[row]);
+              add_row(data[row]);
+            }
+        })
+    }) 
+      // catch fetch errors (ie ACCESS to server blocked)
+    .catch(err => {
+      console.error(err);
+      const tr = document.createElement("tr");
+      const td = document.createElement("td");
+      td.innerHTML = err;
+      tr.appendChild(td);
+      resultContainer.appendChild(tr);
+    });
+      
+   
+  } 
+  function add_row(data) {
+    const tr = document.createElement("tr");
+    const uid = document.createElement("td");
+   
+  
+
+    // obtain data that is specific to the API
+    uid.innerHTML = data.uid; 
+    score.innerHTML = data.score; 
+ 
+
+    // add HTML to container
+    tr.appendChild(uid);
+    tr.appendChild(score);
+   
+
+    resultContainer.appendChild(tr);
+  }
+
+
+</script>
+
+
 </body>
 
 </html>

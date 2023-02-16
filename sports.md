@@ -1,281 +1,92 @@
 # Sports
 
+<html>
+<body>
 
-## Shaurya Goel
-
-### NFL
-
-<table>
-	<tr>
-		<th>Team</th>
-		<th>Division</th>
-		<th>Games Played</th>
-		<th>Games Won</th>
-		<th>Games Drawn</th>
-		<th>Games Played At Home</th>
-		<th>Games Played Away</th>
-		<th>Games Won At Home</th>
-		<th>Games Won Away</th>
-		<th>Games Lost At Home</th>
-		<th>Games Lost Away</th>
-		<th>Points For</th>
-		<th>Points Against</th>
-		<th>Playoffs</th>
-	</tr>
-	<tr>
-		<td>Washington Commanders</td>
-		<td>NFC East</td>
-		<td>17</td>
-		<td>8</td>
-		<td>1</td>
-		<td>8</td>
-		<td>9</td>
-		<td>4</td>
-		<td>4</td>
-		<td>5</td>
-		<td>3</td>
-		<td>321</td>
-		<td>343</td>
-		<td>No</td>
-	</tr>
-	<tr>
-		<td>New York Giants</td>
-		<td>NFC East</td>
-		<td>17</td>
-		<td>9</td>
-		<td>1</td>
-		<td>9</td>
-		<td>8</td>
-		<td>5</td>
-		<td>4</td>
-		<td>3</td>
-		<td>4</td>
-		<td>365</td>
-		<td>371</td>
-		<td>Yes</td>
-	</tr>
-	<tr>
-		<td>Dallas Cowboys</td>
-		<td>NFC East</td>
-		<td>17</td>
-		<td>12</td>
-		<td>0</td>
-		<td>9</td>
-		<td>8</td>
-		<td>8</td>
-		<td>4</td>
-		<td>1</td>
-		<td>4</td>
-		<td>467</td>
-		<td>342</td>
-		<td>Yes</td>
-	</tr>
-	<tr>
-		<td>Philadelphia Eagles</td>
-		<td>NFC East</td>
-		<td>17</td>
-		<td>14</td>
-		<td>0</td>
-		<td>9</td>
-		<td>8</td>
-		<td>7</td>
-		<td>7</td>
-		<td>2</td>
-		<td>1</td>
-		<td>477</td>
-		<td>344</td>
-		<td>Yes</td>
-	</tr>
-	<tr>
-		<td>Arizona Cardinals</td>
-		<td>NFC West</td>
-		<td>17</td>
-		<td>4</td>
-		<td>0</td>
-		<td>9</td>
-		<td>8</td>
-		<td>1</td>
-		<td>3</td>
-		<td>8</td>
-		<td>5</td>
-		<td>340</td>
-		<td>449</td>
-		<td>No</td>
-	</tr>
-	<tr>
-		<td>Los Angeles Rams</td>
-		<td>NFC West</td>
-		<td>17</td>
-		<td>5</td>
-		<td>0</td>
-		<td>9</td>
-		<td>8</td>
-		<td>4</td>
-		<td>1</td>
-		<td>5</td>
-		<td>7</td>
-		<td>307</td>
-		<td>384</td>
-		<td>No</td>
-	</tr>
-	<tr>
-		<td>Seattle Seahawks</td>
-		<td>NFC West</td>
-		<td>17</td>
-		<td>9</td>
-		<td>0</td>
-		<td>9</td>
-		<td>8</td>
-		<td>5</td>
-		<td>4</td>
-		<td>4</td>
-		<td>4</td>
-		<td>407</td>
-		<td>401</td>
-		<td>Yes</td>
-	</tr>
-	<tr>
-		<td>San Francisco 49ers</td>
-		<td>NFC West</td>
-		<td>17</td>
-		<td>13</td>
-		<td>0</td>
-		<td>9</td>
-		<td>8</td>
-		<td>8</td>
-		<td>5</td>
-		<td>1</td>
-		<td>3</td>
-		<td>450</td>
-		<td>277</td>
-		<td>Yes</td>
-	</tr>
-	<tr>
-		<td>Green Bay Packers</td>
-		<td>NFC North</td>
-		<td>17</td>
-		<td>8</td>
-		<td>0</td>
-		<td>9</td>
-		<td>8</td>
-		<td>5</td>
-		<td>3</td>
-		<td>4</td>
-		<td>5</td>
-		<td>370</td>
-		<td>371</td>
-		<td>No</td>
-	</tr>
-	<tr>
-		<td>Chicago Bears</td>
-		<td>NFC North</td>
-		<td>17</td>
-		<td>3</td>
-		<td>0</td>
-		<td>9</td>
-		<td>8</td>
-		<td>2</td>
-		<td>1</td>
-		<td>7</td>
-		<td>7</td>
-		<td>326</td>
-		<td>463</td>
-		<td>No</td>
-	</tr>
-	<tr>
-		<td>Detroit Lions</td>
-		<td>NFC North</td>
-		<td>17</td>
-		<td>9</td>
-		<td>0</td>
-		<td>9</td>
-		<td>8</td>
-		<td>5</td>
-		<td>4</td>
-		<td>4</td>
-		<td>4</td>
-		<td>453</td>
-		<td>427</td>
-		<td>No</td>
-	</tr>
-	<tr>
-		<td>Minnesota Vikings</td>
-		<td>NFC North</td>
-		<td>17</td>
-		<td>13</td>
-		<td>0</td>
-		<td>9</td>
-		<td>8</td>
-		<td>8</td>
-		<td>5</td>
-		<td>1</td>
-		<td>3</td>
-		<td>424</td>
-		<td>427</td>
-		<td>Yes</td>
-	</tr>
-	<tr>
-		<td>New Orleans Saints</td>
-		<td>NFC South</td>
-		<td>17</td>
-		<td>7</td>
-		<td>0</td>
-		<td>9</td>
-		<td>8</td>
-		<td>4</td>
-		<td>3</td>
-		<td>5</td>
-		<td>5</td>
-		<td>330</td>
-		<td>345</td>
-		<td>No</td>
-	</tr>
-	<tr>
-		<td>Atlanta Falcons</td>
-		<td>NFC South</td>
-		<td>17</td>
-		<td>7</td>
-		<td>0</td>
-		<td>9</td>
-		<td>8</td>
-		<td>6</td>
-		<td>1</td>
-		<td>3</td>
-		<td>7</td>
-		<td>365</td>
-		<td>386</td>
-		<td>No</td>
-	</tr>
-	<tr>
-		<td>Tampa Bay Buccaneers</td>
-		<td>NFC South</td>
-		<td>17</td>
-		<td>8</td>
-		<td>0</td>
-		<td>9</td>
-		<td>8</td>
-		<td>5</td>
-		<td>3</td>
-		<td>4</td>
-		<td>5</td>
-		<td>313</td>
-		<td>358</td>
-		<td>Yes</td>
-	</tr>
-	<tr>
-		<td>Carolina Panthers</td>
-		<td>NFC South</td>
-		<td>17</td>
-		<td>7</td>
-		<td>0</td>
-		<td>9</td>
-		<td>8</td>
-		<td>5</td>
-		<td>2</td>
-		<td>4</td>
-		<td>6</td>
-		<td>347</td>
-		<td>374</td>
-		<td>No</td>
-	</tr>
+<table style="width:100%" id="table">
+  <tr>
+    <th>Check for your Favorite NFL Team! Your favorite team's statistics will show the number of games they have played, their overall regular season record, and different statistics about the number of points they have scored and allowed. The last column shows if your team made the playoffs!</th>
+  </tr>
 </table>
+
+
+<script>
+
+var requestOptions = {
+  method: 'GET',
+  redirect: 'follow'
+};
+
+fetch("http://172.23.68.4:8086/api/nflteam", requestOptions)
+  .then(response => response.json())
+  .then(r => {
+	  r.forEach(ev => {
+		  const row = document.createElement("tr")
+		  const data = document.createElement("td")
+		  data.innerHTML = `${ev.team}, ${ev.division}: ${ev.gamesplayed} and ${ev.gameswon}-${ev.gameslost}: ${ev.gamesdrawn}, ${ev.gamesplayedathome}, ${ev.gamesplayedaway}, ${ev.gameswonathome}, ${ev.gameslostathome}, ${ev.gameswonaway}, ${ev.gamesplayed5}, ${ev.gameslost5}, ${ev.pointsfor}, ${ev.pointsagainst}, ${ev.playoffs}: Playoff Berth`
+		  row.appendChild(data)
+		  document.getElementById("table").appendChild(row)
+	  })
+  })
+  .catch(error => console.log('error', error));
+
+function reset() {
+  window.location.reload();
+}
+
+</script>
+
+<script>
+
+const resultContainer = document.getElementById("result");
+  // prepare URL's to allow easy switch from deployment and localhost
+const url = "http://localhost:8086/api/nflteam"
+  //const url = "https://flask.nighthawkcodingsociety.com/api/users"
+const create_fetch = url + '/create';
+const read_fetch = url + '/';
+read_users();
+
+function read_users() {
+    // prepare fetch options
+    const read_options = {
+      method: 'GET', // *GET, POST, PUT, DELETE, etc.
+      mode: 'cors', // no-cors, *cors, same-origin
+      cache: 'default', // *default, no-cache, reload, force-cache, only-if-cached
+      credentials: 'omit', // include, *same-origin, omit
+      headers: {
+        'Content-Type': 'application/json'
+      },
+    };     // fetch the data from API
+    fetch(read_fetch, read_options)
+      // response is a RESTful "promise" on any successful fetch
+      .then(response => {
+        // check for response errors
+        if (response.status !== 200) {
+            const errorMsg = 'Database read error: ' + response.status;
+            console.log(errorMsg);
+            const tr = document.createElement("tr");
+            const td = document.createElement("td");
+            td.innerHTML = errorMsg;
+            tr.appendChild(td);
+            return;
+        }
+        // valid response will have json data
+        response.json().then(data => {
+            console.log(data);
+            for (let row in data) {
+              console.log(data[row]);
+              add_row(data[row]);
+            }
+        })
+    }) 
+      // catch fetch errors (ie ACCESS to server blocked)
+    .catch(err => {
+      console.error(err);
+      const tr = document.createElement("tr");
+      const td = document.createElement("td");
+      td.innerHTML = err;
+      tr.appendChild(td);
+      resultContainer.appendChild(tr);
+    });
+  }
+</script>
