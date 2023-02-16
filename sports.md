@@ -9,38 +9,126 @@
   </tr>
 </table>
 <div class="card-body">
-    <h5 class="card-title">NFL Team Showdown</h5>
+    ## NFL Team Showdown
     <p id="result"></p>
     <p class="card-text">
         <script>
             const team1Vals = {};
             const team2Vals = {};
-            function showStats(teamName, statId) {
-                const dbParam = JSON.stringify({table:"teams",limit:20});
-                const xmlhttp = new XMLHttpRequest();
-                xmlhttp.onload = function() {
-                    console.debug(this.responseText);
-                    const team = JSON.parse(this.responseText);
-                    let text = "<table border='1' style='border-collapse: separate;'><tr><th>Team</th><td>" + team.team + "</td></tr><tr><th>Division</th><td>" + team.division + "</td></tr><tr><th>Games Played</th><td>" + team.gamesplayed + "</td></tr><tr><th>Games Won</th><td>" + team.gameswon + "</td></tr><tr><th>Games Lost</th><td>" + team.gameslost + "</td></tr><tr><th>Games Drawn</th><td>" + team.gamesdrawn + "</td></tr><tr><th>Games Played At Home</th><td>" + team.gamesplayedathome + "</td></tr><tr><th>Games Played Away</th><td>" + team.gamesplayedaway + "</td></tr><tr><th>Games Won At Home</th><td>" + team.gameswonathome + "</td></tr><tr><th>Games Won Away</th><td>" + team.gameswonaway + "</td></tr><tr><th>Games Lost At Home</th><td>" + team.gameslostathome + "</td></tr><tr><th>Games Lost Away</th><td>" + team.gameslostaway + "</td></tr><tr><th>Points For</th><td>" + team.pointsfor + "</td></tr><tr><th>Points Against</th><td>" + team.pointsagainst + "</td></tr><tr><th>Playoffs</th><td>" + team.playoffs + "</td></tr></table>";
-                    document.getElementById(statId).innerHTML = text;
-                    if (statId == "team1_stats"){
-                        team1Vals["team"] = team.team;
-                        team1Vals["gameswon"] = team.gameswon;
-                        team1Vals["pointsfor"] = team.pointsfor;
-                        team1Vals["pointsagainst"] = team.pointsagainst;
-                        team1Vals["playoffs"] = team.playoffs;                
-                    } else if (statId == "team2_stats"){
-                        team2Vals["team"] = team.team;
-                        team2Vals["gameswon"] = team.gameswon;
-                        team2Vals["pointsfor"] = team.pointsfor;
-                        team2Vals["pointsagainst"] = team.pointsagainst;
-                        team2Vals["playoffs"] = team.playoffs;
+            const resultContainer = document.getElementById("result");
+            // prepare URL's to allow easy switch from deployment and localhost
+            const url = "http://localhost:8086/api/nflteam"
+            //const url = "https://flask.nighthawkcodingsociety.com/api/users"
+            const create_fetch = url + '/create';
+            const read_fetch = url + '/';
+            function load() {
+                // prepare fetch options
+                const read_options = {
+                method: 'GET', // *GET, POST, PUT, DELETE, etc.
+                mode: 'cors', // no-cors, *cors, same-origin
+                cache: 'default', // *default, no-cache, reload, force-cache, only-if-cached
+                credentials: 'omit', // include, *same-origin, omit
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                };     // fetch the data from API
+                fetch(read_fetch, read_options)
+                // response is a RESTful "promise" on any successful fetch
+                .then(response => {
+                    // check for response errors
+                    if (response.status !== 200) {
+                        const errorMsg = 'Database read error: ' + response.status;
+                        console.log(errorMsg);
+                        const tr = document.createElement("tr");
+                        const td = document.createElement("td");
+                        td.innerHTML = errorMsg;
+                        tr.appendChild(td);
+                        return;
                     }
-                    compareTeams();
-                }
-                xmlhttp.open("GET", "http://localhost:8086/api/nflteam?name="+teamName);
-                xmlhttp.setRequestHeader("Content-type", "application/team-www-form-urlencoded");
-                xmlhttp.send("team=" + dbParam);
+                    // valid response will have json data
+                    response.json().then(teams => {
+                        console.log(teams);
+                        let team1Select = "<select name='team1_name' id='team1_name' onchange='showTeam1Stats()' onfocus='showTeam1Stats()'><option value=''>Select Team</option>";
+                        let team2Select = "<select name='team2_name' id='team2_name' onchange='showTeam2Stats()' onfocus='showTeam2Stats()'><option value=''>Select Challenger</option>";
+                        let text = "<table border='1' style='border-collapse: separate;'><tr><th>Team</th><th>Division</th><th>Games Played</th><th>Games Won</th><th>Games Drawn</th><th>Games Played At Home</th><th>Games Played Away</th><th>Games Won At Home</th><th>Games Won Away</th><th>Games Lost At Home</th><th>Games Lost Away</th><th>Points For</th><th>Points Against</th><th>Playoffs</th></tr>"
+                        for (let team in teams) {
+                            team1Select+= "<option value='"+teams[team].team+"'>"+teams[team].team+"</option>";
+                            team2Select+= "<option value='"+teams[team].team+"'>"+teams[team].team+"</option>";
+                            text += "<tr><td>" + teams[team].team + "</td><td>" + teams[team].division + "</td><td>" + teams[team].gamesplayed + "</td><td>" + teams[team].gameswon + "</td><td>" + teams[team].gamesdrawn + "</td><td>" + teams[team].gamesplayedathome + "</td><td>" + teams[team].gamesplayedaway + "</td><td>" + teams[team].gameswonathome + "</td><td>" + teams[team].gameswonaway + "</td><td>" + teams[team].gameslostathome + "</td><td>" + teams[team].gameslostaway + "</td><td>" + teams[team].pointsfor + "</td><td>" + teams[team].pointsagainst + "</td><td>" + teams[team].playoffs + "</td></tr>";
+                        }
+                        text += "</table>";
+                        team1Select+= "</select>";
+                        team2Select+= "</select>";
+                        document.getElementById("team1").innerHTML = team1Select;
+                        document.getElementById("team2").innerHTML = team2Select;
+                        document.getElementById("demo").innerHTML = text;
+                    })
+                }) 
+                // catch fetch errors (ie ACCESS to server blocked)
+                .catch(err => {
+                console.error(err);
+                const tr = document.createElement("tr");
+                const td = document.createElement("td");
+                td.innerHTML = err;
+                tr.appendChild(td);
+                resultContainer.appendChild(tr);
+                });
+            }
+            function showStats(teamName, statId) {
+                // prepare fetch options
+                const read_options = {
+                    method: 'GET', // *GET, POST, PUT, DELETE, etc.
+                    mode: 'cors', // no-cors, *cors, same-origin
+                    cache: 'default', // *default, no-cache, reload, force-cache, only-if-cached
+                    credentials: 'omit', // include, *same-origin, omit
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                };     // fetch the data from API
+                let read_fetch_team = read_fetch + '?name='+teamName;
+                fetch(read_fetch_team, read_options)
+                // response is a RESTful "promise" on any successful fetch
+                    .then(response => {
+                        // check for response errors
+                        if (response.status !== 200) {
+                            const errorMsg = 'Database read error: ' + response.status;
+                            console.log(errorMsg);
+                            const tr = document.createElement("tr");
+                            const td = document.createElement("td");
+                            td.innerHTML = errorMsg;
+                            tr.appendChild(td);
+                            return;
+                        }
+                        // valid response will have json data
+                        response.json().then(team => {
+                            console.log(team);
+                                let text = "<table border='1' style='border-collapse: separate;'><tr><th>Team</th><td>" + team.team + "</td></tr><tr><th>Division</th><td>" + team.division + "</td></tr><tr><th>Games Played</th><td>" + team.gamesplayed + "</td></tr><tr><th>Games Won</th><td>" + team.gameswon + "</td></tr><tr><th>Games Lost</th><td>" + team.gameslost + "</td></tr><tr><th>Games Drawn</th><td>" + team.gamesdrawn + "</td></tr><tr><th>Games Played At Home</th><td>" + team.gamesplayedathome + "</td></tr><tr><th>Games Played Away</th><td>" + team.gamesplayedaway + "</td></tr><tr><th>Games Won At Home</th><td>" + team.gameswonathome + "</td></tr><tr><th>Games Won Away</th><td>" + team.gameswonaway + "</td></tr><tr><th>Games Lost At Home</th><td>" + team.gameslostathome + "</td></tr><tr><th>Games Lost Away</th><td>" + team.gameslostaway + "</td></tr><tr><th>Points For</th><td>" + team.pointsfor + "</td></tr><tr><th>Points Against</th><td>" + team.pointsagainst + "</td></tr><tr><th>Playoffs</th><td>" + team.playoffs + "</td></tr></table>";
+                            document.getElementById(statId).innerHTML = text;
+                            if (statId == "team1_stats"){
+                                team1Vals["team"] = team.team;
+                                team1Vals["gameswon"] = team.gameswon;
+                                team1Vals["pointsfor"] = team.pointsfor;
+                                team1Vals["pointsagainst"] = team.pointsagainst;
+                                team1Vals["playoffs"] = team.playoffs;                
+                            } else if (statId == "team2_stats"){
+                                team2Vals["team"] = team.team;
+                                team2Vals["gameswon"] = team.gameswon;
+                                team2Vals["pointsfor"] = team.pointsfor;
+                                team2Vals["pointsagainst"] = team.pointsagainst;
+                                team2Vals["playoffs"] = team.playoffs;
+                            }
+                            compareTeams();
+                        })
+                    }) 
+                // catch fetch errors (ie ACCESS to server blocked)
+                .catch(err => {
+                    console.error(err);
+                    const tr = document.createElement("tr");
+                    const td = document.createElement("td");
+                    td.innerHTML = err;
+                    tr.appendChild(td);
+                    resultContainer.appendChild(tr);
+                });
             }
             function compareTeams(){
                 let challenger_points = 0;
@@ -99,40 +187,7 @@
                     document.getElementById("result").innerHTML="";
                 }
             }
-            function load(){
-                const read_options = {
-                    method: 'GET', // *GET, POST, PUT, DELETE, etc.
-                    mode: 'cors', // no-cors, *cors, same-origin
-                    cache: 'default', // *default, no-cache, reload, force-cache, only-if-cached
-                    credentials: 'omit', // include, *same-origin, omit
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    }; 
-              let response = fetch("http://localhost:8086/api/nflteam", read_options);
-                if (response.ok) { // if HTTP-status is 200-299
-                    // get the response body (the method explained below)
-                    let teams =  response.json();
-                    console.log(teams);
-                    let team1Select = "<select name='team1_name' id='team1_name' onchange='showTeam1Stats()' onfocus='showTeam1Stats()'><option value=''>Select Team</option>";
-                    let team2Select = "<select name='team2_name' id='team2_name' onchange='showTeam2Stats()' onfocus='showTeam2Stats()'><option value=''>Select Challenger</option>";
-                    let text = "<table border='1' style='border-collapse: separate;'><tr><th>Team</th><th>Division</th><th>Games Played</th><th>Games Won</th><th>Games Drawn</th><th>Games Played At Home</th><th>Games Played Away</th><th>Games Won At Home</th><th>Games Won Away</th><th>Games Lost At Home</th><th>Games Lost Away</th><th>Points For</th><th>Points Against</th><th>Playoffs</th></tr>"
-                    for (let team in teams) {
-                        team1Select+= "<option value='"+teams[team].team+"'>"+teams[team].team+"</option>";
-                        team2Select+= "<option value='"+teams[team].team+"'>"+teams[team].team+"</option>";
-                        text += "<tr><td>" + teams[team].team + "</td><td>" + teams[team].division + "</td><td>" + teams[team].gamesplayed + "</td><td>" + teams[team].gameswon + "</td><td>" + teams[team].gamesdrawn + "</td><td>" + teams[team].gamesplayedathome + "</td><td>" + teams[team].gamesplayedaway + "</td><td>" + teams[team].gameswonathome + "</td><td>" + teams[team].gameswonaway + "</td><td>" + teams[team].gameslostathome + "</td><td>" + teams[team].gameslostaway + "</td><td>" + teams[team].pointsfor + "</td><td>" + teams[team].pointsagainst + "</td><td>" + teams[team].playoffs + "</td></tr>";
-                    }
-                    text += "</table>";
-                    team1Select+= "</select>";
-                    team2Select+= "</select>";
-                    document.getElementById("team1").innerHTML = team1Select;
-                    document.getElementById("team2").innerHTML = team2Select;
-                    document.getElementById("demo").innerHTML = text;
-                } else {
-                  alert("HTTP-Error: " + response.status);
-                }
-            }
-            //load();
+            load();
         </script>
         <table width="100%">
             <tr><td>Team</td><td>Challenger</td></tr>
@@ -144,69 +199,4 @@
         <p id="demo"></p>
     </p>
     <a href="#" class="btn btn-primary">Reload</a>
-    </div>
 </div>
-
-<script>
-const resultContainer = document.getElementById("result");
-  // prepare URL's to allow easy switch from deployment and localhost
-const url = "http://localhost:8086/api/nflteam"
-  //const url = "https://flask.nighthawkcodingsociety.com/api/users"
-const create_fetch = url + '/create';
-const read_fetch = url + '/';
-read_users();
-
-function read_users() {
-    // prepare fetch options
-    const read_options = {
-      method: 'GET', // *GET, POST, PUT, DELETE, etc.
-      mode: 'cors', // no-cors, *cors, same-origin
-      cache: 'default', // *default, no-cache, reload, force-cache, only-if-cached
-      credentials: 'omit', // include, *same-origin, omit
-      headers: {
-        'Content-Type': 'application/json'
-      },
-    };     // fetch the data from API
-    fetch(read_fetch, read_options)
-      // response is a RESTful "promise" on any successful fetch
-      .then(response => {
-        // check for response errors
-        if (response.status !== 200) {
-            const errorMsg = 'Database read error: ' + response.status;
-            console.log(errorMsg);
-            const tr = document.createElement("tr");
-            const td = document.createElement("td");
-            td.innerHTML = errorMsg;
-            tr.appendChild(td);
-            return;
-        }
-        // valid response will have json data
-        response.json().then(teams => {
-            console.log(teams);
-            let team1Select = "<select name='team1_name' id='team1_name' onchange='showTeam1Stats()' onfocus='showTeam1Stats()'><option value=''>Select Team</option>";
-            let team2Select = "<select name='team2_name' id='team2_name' onchange='showTeam2Stats()' onfocus='showTeam2Stats()'><option value=''>Select Challenger</option>";
-            let text = "<table border='1' style='border-collapse: separate;'><tr><th>Team</th><th>Division</th><th>Games Played</th><th>Games Won</th><th>Games Drawn</th><th>Games Played At Home</th><th>Games Played Away</th><th>Games Won At Home</th><th>Games Won Away</th><th>Games Lost At Home</th><th>Games Lost Away</th><th>Points For</th><th>Points Against</th><th>Playoffs</th></tr>"
-            for (let team in teams) {
-                team1Select+= "<option value='"+teams[team].team+"'>"+teams[team].team+"</option>";
-                team2Select+= "<option value='"+teams[team].team+"'>"+teams[team].team+"</option>";
-                text += "<tr><td>" + teams[team].team + "</td><td>" + teams[team].division + "</td><td>" + teams[team].gamesplayed + "</td><td>" + teams[team].gameswon + "</td><td>" + teams[team].gamesdrawn + "</td><td>" + teams[team].gamesplayedathome + "</td><td>" + teams[team].gamesplayedaway + "</td><td>" + teams[team].gameswonathome + "</td><td>" + teams[team].gameswonaway + "</td><td>" + teams[team].gameslostathome + "</td><td>" + teams[team].gameslostaway + "</td><td>" + teams[team].pointsfor + "</td><td>" + teams[team].pointsagainst + "</td><td>" + teams[team].playoffs + "</td></tr>";
-            }
-            text += "</table>";
-            team1Select+= "</select>";
-            team2Select+= "</select>";
-            document.getElementById("team1").innerHTML = team1Select;
-            document.getElementById("team2").innerHTML = team2Select;
-            document.getElementById("demo").innerHTML = text;
-        })
-    }) 
-      // catch fetch errors (ie ACCESS to server blocked)
-    .catch(err => {
-      console.error(err);
-      const tr = document.createElement("tr");
-      const td = document.createElement("td");
-      td.innerHTML = err;
-      tr.appendChild(td);
-      resultContainer.appendChild(tr);
-    });
-  }
-</script>
