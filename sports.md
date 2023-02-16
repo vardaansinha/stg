@@ -100,10 +100,10 @@
                 }
             }
             function load(){
-                const dbParam = JSON.stringify({table:"teams",limit:20});
-                const xmlhttp = new XMLHttpRequest();
-                xmlhttp.onload = function() {
-                    const teams = JSON.parse(this.responseText);
+              let response = await fetch("http://localhost:8086/api/nflteam");
+                if (response.ok) { // if HTTP-status is 200-299
+                    // get the response body (the method explained below)
+                    let teams = await response.json();
                     let team1Select = "<select name='team1_name' id='team1_name' onchange='showTeam1Stats()' onfocus='showTeam1Stats()'><option value=''>Select Team</option>";
                     let team2Select = "<select name='team2_name' id='team2_name' onchange='showTeam2Stats()' onfocus='showTeam2Stats()'><option value=''>Select Challenger</option>";
                     let text = "<table border='1' style='border-collapse: separate;'><tr><th>Team</th><th>Division</th><th>Games Played</th><th>Games Won</th><th>Games Drawn</th><th>Games Played At Home</th><th>Games Played Away</th><th>Games Won At Home</th><th>Games Won Away</th><th>Games Lost At Home</th><th>Games Lost Away</th><th>Points For</th><th>Points Against</th><th>Playoffs</th></tr>"
@@ -118,10 +118,9 @@
                     document.getElementById("team1").innerHTML = team1Select;
                     document.getElementById("team2").innerHTML = team2Select;
                     document.getElementById("demo").innerHTML = text;
+                } else {
+                  alert("HTTP-Error: " + response.status);
                 }
-                xmlhttp.open("GET", "http://localhost:8086/api/nflteam");
-                xmlhttp.setRequestHeader("Content-type", "application/team-www-form-urlencoded");
-                xmlhttp.send("team=" + dbParam);
             }
             load();
         </script>
