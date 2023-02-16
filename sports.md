@@ -1,11 +1,11 @@
-# Sports
+# NFL
 
 <html>
 <body>
 
 <table style="width:100%" id="table">
   <tr>
-    <th>Check for your Favorite NFL Team! Your favorite team's statistics will show the number of games they have played, their overall regular season record, and different statistics about the number of points they have scored and allowed. The last column shows if your team made the playoffs!</th>
+    <th>Check for your Favorite NFL Team! Your favorite team's statistics will show the number of games they have played, their overall regular season record, and different statistics about the number of points they have scored and allowed. The last column shows if your team made the playoffs! You may also use the match predictor that uses an algorithm to predict which team will win using the team statistics!</th>
   </tr>
 </table>
 <h2>NFL Team Showdown</h2>
