@@ -8,8 +8,8 @@
     <th>Check for your Favorite NFL Team! Your favorite team's statistics will show the number of games they have played, their overall regular season record, and different statistics about the number of points they have scored and allowed. The last column shows if your team made the playoffs!</th>
   </tr>
 </table>
+<h2>NFL Team Showdown</h2>
 <div class="card-body">
-    ## NFL Team Showdown
     <p id="result"></p>
     <p class="card-text">
         <script>
@@ -153,11 +153,11 @@
                 if (team1Vals.playoffs == "Yes")
                     challenger_points--;
                 if (challenger_points > 0)
-                    document.getElementById("result").innerHTML = team2Vals.team + " has better chances of winning over "+team1Vals.team+" ("+challenger_points+")";
+                    document.getElementById("result").innerHTML = team2Vals.team + " has better chances of winning over "+team1Vals.team;
                 else if (challenger_points < 0)
-                    document.getElementById("result").innerHTML = team1Vals.team + " has better chances of winning over "+team2Vals.team+" ("+challenger_points+")";
+                    document.getElementById("result").innerHTML = team1Vals.team + " has better chances of winning over "+team2Vals.team;
                 else if (challenger_points == 0)
-                    document.getElementById("result").innerHTML = team2Vals.team + " has same chances of winning as "+team1Vals.team+" ("+challenger_points+")";
+                    document.getElementById("result").innerHTML = team2Vals.team + " has same chances of winning as "+team1Vals.team;
             }
             function showTeam1Stats(){
                 console.debug("inside showTeam2Stats()");
