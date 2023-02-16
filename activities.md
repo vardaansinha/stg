@@ -76,7 +76,7 @@ function read_users() {
         // check for response errors
         if (response.status !== 200) {
             const errorMsg = 'Database read error: ' + response.status;
-            console.log(errorMsg);
+            //console.log(errorMsg);
             const tr = document.createElement("tr");
             const td = document.createElement("td");
             td.innerHTML = errorMsg;
@@ -94,7 +94,7 @@ function read_users() {
     }) 
       // catch fetch errors (ie ACCESS to server blocked)
     .catch(err => {
-      console.error(err);
+      //console.error(err);
       const tr = document.createElement("tr");
       const td = document.createElement("td");
       td.innerHTML = err;
