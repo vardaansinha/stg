@@ -132,7 +132,7 @@
                   alert("HTTP-Error: " + response.status);
                 }
             }
-            load();
+            //load();
         </script>
         <table width="100%">
             <tr><td>Team</td><td>Challenger</td></tr>
@@ -183,10 +183,20 @@ function read_users() {
         // valid response will have json data
         response.json().then(data => {
             console.log(data);
-            /*for (let row in data) {
-              console.log(data[row]);
-              add_row(data[row]);
-            }*/
+            let team1Select = "<select name='team1_name' id='team1_name' onchange='showTeam1Stats()' onfocus='showTeam1Stats()'><option value=''>Select Team</option>";
+            let team2Select = "<select name='team2_name' id='team2_name' onchange='showTeam2Stats()' onfocus='showTeam2Stats()'><option value=''>Select Challenger</option>";
+            let text = "<table border='1' style='border-collapse: separate;'><tr><th>Team</th><th>Division</th><th>Games Played</th><th>Games Won</th><th>Games Drawn</th><th>Games Played At Home</th><th>Games Played Away</th><th>Games Won At Home</th><th>Games Won Away</th><th>Games Lost At Home</th><th>Games Lost Away</th><th>Points For</th><th>Points Against</th><th>Playoffs</th></tr>"
+            for (let team in teams) {
+                team1Select+= "<option value='"+teams[team].team+"'>"+teams[team].team+"</option>";
+                team2Select+= "<option value='"+teams[team].team+"'>"+teams[team].team+"</option>";
+                text += "<tr><td>" + teams[team].team + "</td><td>" + teams[team].division + "</td><td>" + teams[team].gamesplayed + "</td><td>" + teams[team].gameswon + "</td><td>" + teams[team].gamesdrawn + "</td><td>" + teams[team].gamesplayedathome + "</td><td>" + teams[team].gamesplayedaway + "</td><td>" + teams[team].gameswonathome + "</td><td>" + teams[team].gameswonaway + "</td><td>" + teams[team].gameslostathome + "</td><td>" + teams[team].gameslostaway + "</td><td>" + teams[team].pointsfor + "</td><td>" + teams[team].pointsagainst + "</td><td>" + teams[team].playoffs + "</td></tr>";
+            }
+            text += "</table>";
+            team1Select+= "</select>";
+            team2Select+= "</select>";
+            document.getElementById("team1").innerHTML = team1Select;
+            document.getElementById("team2").innerHTML = team2Select;
+            document.getElementById("demo").innerHTML = text;
         })
     }) 
       // catch fetch errors (ie ACCESS to server blocked)
