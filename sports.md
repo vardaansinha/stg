@@ -50,11 +50,11 @@
                         console.log(teams);
                         let team1Select = "<select name='team1_name' id='team1_name' onchange='showTeam1Stats()' onfocus='showTeam1Stats()'><option value=''>Select Team</option>";
                         let team2Select = "<select name='team2_name' id='team2_name' onchange='showTeam2Stats()' onfocus='showTeam2Stats()'><option value=''>Select Challenger</option>";
-                        let text = "<table border='1' style='border-collapse: separate;'><tr><th>Team</th><th>Division</th><th>Games Played</th><th>Games Won</th><th>Games Drawn</th><th>Games Played At Home</th><th>Games Played Away</th><th>Games Won At Home</th><th>Games Won Away</th><th>Games Lost At Home</th><th>Games Lost Away</th><th>Points For</th><th>Points Against</th><th>Playoffs</th></tr>"
+                        let text = "<table border='1' style='border-collapse: separate;'><tr><th>Team</th><th>Division</th><th>Games Played</th><th>Games Won</th><th>Games Lost</th><th>Games Drawn</th><th>Games Played At Home</th><th>Games Played Away</th><th>Games Won At Home</th><th>Games Won Away</th><th>Games Lost At Home</th><th>Games Lost Away</th><th>Points For</th><th>Points Against</th><th>Playoffs</th></tr>"
                         for (let team in teams) {
                             team1Select+= "<option value='"+teams[team].team+"'>"+teams[team].team+"</option>";
                             team2Select+= "<option value='"+teams[team].team+"'>"+teams[team].team+"</option>";
-                            text += "<tr><td>" + teams[team].team + "</td><td>" + teams[team].division + "</td><td>" + teams[team].gamesplayed + "</td><td>" + teams[team].gameswon + "</td><td>" + teams[team].gamesdrawn + "</td><td>" + teams[team].gamesplayedathome + "</td><td>" + teams[team].gamesplayedaway + "</td><td>" + teams[team].gameswonathome + "</td><td>" + teams[team].gameswonaway + "</td><td>" + teams[team].gameslostathome + "</td><td>" + teams[team].gameslostaway + "</td><td>" + teams[team].pointsfor + "</td><td>" + teams[team].pointsagainst + "</td><td>" + teams[team].playoffs + "</td></tr>";
+                            text += "<tr><td>" + teams[team].team + "</td><td>" + teams[team].division + "</td><td>" + teams[team].gamesplayed + "</td><td>" + teams[team].gameswon + "</td><td>" + teams[team].gameslost + "</td><td>" + teams[team].gamesdrawn + "</td><td>" + teams[team].gamesplayedathome + "</td><td>" + teams[team].gamesplayedaway + "</td><td>" + teams[team].gameswonathome + "</td><td>" + teams[team].gameswonaway + "</td><td>" + teams[team].gameslostathome + "</td><td>" + teams[team].gameslostaway + "</td><td>" + teams[team].pointsfor + "</td><td>" + teams[team].pointsagainst + "</td><td>" + teams[team].playoffs + "</td></tr>";
                         }
                         text += "</table>";
                         team1Select+= "</select>";
@@ -202,7 +202,8 @@
                 var t12 = document.getElementById("t12");
                 var t13 = document.getElementById("t13");
                 var t14 = document.getElementById("t14");
-                let reqData = "{\"division\":\"" + t2.value + "\",\"gamesdrawn\":\"" + t5.value + ",\"gameslostathome\":\"" + t10.value + ",\"gameslostaway\":\"" + t11.value + ",\"gamesplayed\":\"" + t3.value + ",\"gamesplayedathome\":\"" + t6.value + ",\"gamesplayedaway\":\"" + t7.value + ",\"gameswon\":\"" + t4.value + ",\"gameswonathome\":\"" + t8.value + ",\"gameswonaway\":\"" + t9.value + "4,\"playoffs\":\"" + t14.value + "\",\"pointsagainst\":\"" + t13.value + ",\"pointsfor\":\"" + t12.value + ",\"team\":\"" + t1.value + "\"}";
+                var t15 = document.getElementById("t15");
+                let reqData = "{\"division\":\"" + t2.value + "\",\"gamesdrawn\":\"" + t5.value + ",\"gameslostathome\":\"" + t10.value + ",\"gameslostaway\":\"" + t11.value + ",\"gamesplayed\":\"" + t3.value + ",\"gamesplayedathome\":\"" + t6.value + ",\"gamesplayedaway\":\"" + t7.value + ",\"gameswon\":\"" + t4.value + ",\"gameswonathome\":\"" + t8.value + ",\"gameswonaway\":\"" + t9.value + "4,\"playoffs\":\"" + t14.value + "\",\"pointsagainst\":\"" + t13.value + ",\"pointsfor\":\"" + t12.value + ",\"gameslost\":\"" + t15.value + ",\"team\":\"" + t1.value + "\"}";
                 // prepare fetch options
                 const read_options = {
                     method: 'POST', // *GET, POST, PUT, DELETE, etc.
@@ -255,6 +256,7 @@
             <tr><td>Division</td><td><input type="text" id="t2"></td></tr>
             <tr><td>Games Played</td><td><input type="text" id="t3"></td></tr>
             <tr><td>Games Won</td><td><input type="text" id="t4"></td></tr>
+            <tr><td>Games Lost</td><td><input type="text" id="t15"></td></tr>
             <tr><td>Games Drawn</td><td><input type="text" id="t5"></td></tr>
             <tr><td>Games Played At Home</td><td><input type="text" id="t6"></td></tr>
             <tr><td>Games Played Away</td><td><input type="text" id="t7"></td></tr>
@@ -264,7 +266,7 @@
             <tr><td>Games Lost Away</td><td><input type="text" id="t11"></td></tr>
             <tr><td>Points For</td><td><input type="text" id="t12"></td></tr>
             <tr><td>Points Against</td><td><input type="text" id="t13"></td></tr>
-            <tr><td>Playoffs</td><td><input type="text" id="t14"></td></tr>
+            <tr><td>Playoffs</td><td><input type="text" id="t14"></td></tr>            
         </table>
         <a onclick="createTeam()" class="btn btn-primary">Create</a>
         <br><br>
