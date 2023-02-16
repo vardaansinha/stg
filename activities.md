@@ -57,7 +57,7 @@ const resultContainer = document.getElementById("result");
 const url = "https://fnvs.duckdns.org/api/breakingnews/"
 const create_fetch = url + '/create';
 const read_fetch = url + '/';
-read_users();
+//read_users();
 
 function read_users() {
     // prepare fetch options
