@@ -194,9 +194,26 @@
             <tr><td id="team1"></td><td id="team2"></td></tr>
             <tr><td id="team1_stats"></td><td id="team2_stats"></td></tr>
         </table>
+        <tr><td>Team</td><td><input type="text" id="t1"></td></tr>
+        <tr><td>Division</td><td><input type="text" id="t2"></td></tr>
+        <tr><td>Games Played</td><td><input type="text" id="t3"></td></tr>
+        <tr><td>Games Won</td><td><input type="text" id="t4"></td></tr>
+        <tr><td>Games Drawn</td><td><input type="text" id="t5"></td></tr>
+        <tr><td>Games Played At Home</td><td><input type="text" id="t6"></td></tr>
+        <tr><td>Games Played Away</td><td><input type="text" id="t7"></td></tr>
+        <tr><td>Games Won At Home</td><td><input type="text" id="t8"></td></tr>
+        <tr><td>Games Won Away</td><td><input type="text" id="t9"></td></tr>
+        <tr><td>Games Lost At Home</td><td><input type="text" id="t10"></td></tr>
+        <tr><td>Games Lost Away</td><td><input type="text" id="t11"></td></tr>
+        <tr><td>Points For</td><td><input type="text" id="t12"></td></tr>
+        <tr><td>Points Against</td><td><input type="text" id="t13"></td></tr>
+        <tr><td>Playoffs</td><td><input type="text" id="t14"></td></tr>
+        <table width="100%">
+        </table>
+        <a href="#" class="btn btn-primary">Create</a>
         <br><br>
         <h5 class="card-title">Team Stats at a Glance</h5>
         <p id="demo"></p>
     </p>
-    <a href="#" class="btn btn-primary">Reload</a>
+    
 </div>
