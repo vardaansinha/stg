@@ -17,7 +17,7 @@
             const team2Vals = {};
             const resultContainer = document.getElementById("result");
             // prepare URL's to allow easy switch from deployment and localhost
-            const url = "http://localhost:8086/api/nflteam"
+            const url = "https://fnvs.duckdns.org/api/nflteam"
             //const url = "https://flask.nighthawkcodingsociety.com/api/users"
             const create_fetch = url + '/create';
             const read_fetch = url + '/';
