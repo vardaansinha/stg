@@ -170,10 +170,10 @@ document.getElementById("score").innerHTML = (sCore1);
 
 
 
-<table>
+<table id = "table">
   <thead>
   <tr>
-    <th>User ID</th>
+    <th>User submitted facts here!</th>
     <th>facts</th>
   </tr>
   </thead>
@@ -201,10 +201,17 @@ var requestOptions = {
 };
 
 fetch("http://172.20.10.82:8086/api/scores/", requestOptions)
-  .then(response => response.text())
-  .then(result => console.log(result))
-  .catch(error => console.log('error', error));
-
+  .then(response => response.json())
+  .then(r => {
+	r.forEach(ev => {
+		const row = document.createElement("tr")
+		const data = document.createElement("td")
+		data.innerHTML = `${ev.score}`
+		row.appendChild(data)
+		document.getElementById("table").appendChild(row)
+	})
+  })
+  .catch(error => console.log('error', error))
 
 
   // prepare HTML result container for new output
