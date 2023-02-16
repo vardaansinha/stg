@@ -120,7 +120,9 @@ var requestOptions = {
   redirect: 'follow'
 };
 
-fetch("http://172.25.57.176:8086/api/breakingnews/", requestOptions)
+//Working Fetch
+//fetch("http://172.25.57.176:8086/api/breakingnews/", requestOptions)
+fetch("http://localhost:8086/api/breakingnews/", requestOptions)
   .then(response => response.json())
   .then(r => {
 	r.forEach(ev => {
