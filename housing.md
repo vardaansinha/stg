@@ -8,6 +8,8 @@
 <table style="width:100%" id="table">
   <tr>
     <th>Interesting Event that has happened on a day of this Week</th>
+    <th>Edit Fact</th>
+    <th>Delete Fact</th>
   </tr>
 </table>
 
@@ -25,7 +27,7 @@ var requestOptions = {
 };
 
 
-fetch("http://172.23.68.4:8679/api/fact", requestOptions)
+fetch("https://fnvs.duckdns.org/api/fact", requestOptions)
   .then(response => response.json())
   .then(r => {
   r.forEach(ev => {
@@ -69,7 +71,7 @@ function reset() {
 
 const resultContainer = document.getElementById("result");
   // prepare URL's to allow easy switch from deployment and localhost
-const url = "http://172.23.68.4:8679/api/fact"
+const url = "https://fnvs.duckdns.org/api/fact"
   //const url = "https://flask.nighthawkcodingsociety.com/api/users"
 const create_fetch = url + '/create';
 const read_fetch = url + '/';
@@ -137,7 +139,7 @@ function read_users() {
 
 <script>
   function create_user() {
-    fetch("http://172.23.68.4:8679/api/fact/create", {
+    fetch("https://fnvs.duckdns.org/api/fact/create", {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
