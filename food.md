@@ -254,7 +254,7 @@ fetch("https://fnvs.duckdns.org/api/scores/", requestOptions)
             console.log(data);
             for (let row in data) {
               console.log(data[row]);
-              add_row(data[row]);
+           
             }
         })
     }) 
@@ -289,6 +289,32 @@ fetch("https://fnvs.duckdns.org/api/scores/", requestOptions)
     resultContainer.appendChild(tr);
   }
 
+function create_user() {
+  const body = {
+        uid: document.getElementById("testr").value,  
+        score: document.getElementById("testr").value
+    };
+
+    const requestOptions = {
+        method: 'POST',
+        body: JSON.stringify(body),
+        headers: {
+            "content-type": "application/json",
+            'Authorization': 'Bearer my-token',
+        },
+    };
+
+  fetch("https://fnvs.duckdns.org/api/scores/create", requestOptions)
+    .then(response  => {
+       if (response.status == 200) {
+          const errorMsg = 'POST SUCCESS: ' + response.status;
+          console.log(errorMsg);
+          reset(); 
+          return;
+        }
+    })
+    .catch(error => console.log('error', error))
+ }
 
 </script>
 
