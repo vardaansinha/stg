@@ -283,7 +283,7 @@
             <tr><td id="team1"></td><td id="team2"></td></tr>
             <tr><td id="team1_stats"></td><td id="team2_stats"></td></tr>
         </table>
-        <p1 id="team_created_message"></p>
+        <p id="team_created_message"></p>
         <table width="100%">
             <tr><td>Team</td><td><input type="text" id="t1"></td></tr>
             <tr><td>Division</td><td><input type="text" id="t2"></td></tr>
