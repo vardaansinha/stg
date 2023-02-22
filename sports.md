@@ -202,12 +202,15 @@
                 var t12 = document.getElementById("t12");
                 var t13 = document.getElementById("t13");
                 var t14 = document.getElementById("t14");
+                var t15 = document.getElementById("t15");
                 let reqData = "{\"division\":\""
                 + t2.value 
                 + "\",\"gamesdrawn\":" 
                 + t5.value 
                 + ",\"gameslostathome\":" 
                 + t10.value 
+                + ",\"gameslost\":" 
+                + t15.value 
                 + ",\"gameslostaway\":" 
                 + t11.value 
                 + ",\"gamesplayed\":" 
