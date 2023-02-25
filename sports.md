@@ -54,7 +54,7 @@
                         for (let team in teams) {
                             team1Select+= "<option value='"+teams[team].team+"'>"+teams[team].team+"</option>";
                             team2Select+= "<option value='"+teams[team].team+"'>"+teams[team].team+"</option>";
-                            text += "<tr><td>" + teams[team].team + "</td><td>" + teams[team].division + "</td><td>" + teams[team].gamesplayed + "</td><td>" + teams[team].gameswon + "</td><td>" + teams[team].gameslost + "</td><td>" + teams[team].gamesdrawn + "</td><td>" + teams[team].gamesplayedathome + "</td><td>" + teams[team].gamesplayedaway + "</td><td>" + teams[team].gameswonathome + "</td><td>" + teams[team].gameswonaway + "</td><td>" + teams[team].gameslostathome + "</td><td>" + teams[team].gameslostaway + "</td><td>" + teams[team].pointsfor + "</td><td>" + teams[team].pointsagainst + "</td><td>" + teams[team].playoffs + "</td></tr>";
+                            text += "<tr><td>" + teams[team].team + "</td><td>" + teams[team].division + "</td><td><div contenteditable>" + teams[team].gamesplayed + "</div></td><td><div contenteditable>" + teams[team].gameswon + "</div></td><td><div contenteditable>" + teams[team].gameslost + "</div></td><td><div contenteditable>" + teams[team].gamesdrawn + "</div></td><td><div contenteditable>" + teams[team].gamesplayedathome + "</div></td><td><div contenteditable>" + teams[team].gamesplayedaway + "</div></td><td><div contenteditable>" + teams[team].gameswonathome + "</div></td><td><div contenteditable>" + teams[team].gameswonaway + "</div></td><td><div contenteditable>" + teams[team].gameslostathome + "</div></td><td><div contenteditable>" + teams[team].gameslostaway + "</div></td><td><div contenteditable>" + teams[team].pointsfor + "</div></td><td><div contenteditable>" + teams[team].pointsagainst + "</div></td><td><div contenteditable>" + teams[team].playoffs + "</div></td></tr>";
                         }
                         text += "</table>";
                         team1Select+= "</select>";
@@ -203,7 +203,38 @@
                 var t13 = document.getElementById("t13");
                 var t14 = document.getElementById("t14");
                 var t15 = document.getElementById("t15");
-                let reqData = "{\"division\":\"" + t2.value + "\",\"gamesdrawn\":\"" + t5.value + ",\"gameslostathome\":\"" + t10.value + ",\"gameslostaway\":\"" + t11.value + ",\"gamesplayed\":\"" + t3.value + ",\"gamesplayedathome\":\"" + t6.value + ",\"gamesplayedaway\":\"" + t7.value + ",\"gameswon\":\"" + t4.value + ",\"gameswonathome\":\"" + t8.value + ",\"gameswonaway\":\"" + t9.value + "4,\"playoffs\":\"" + t14.value + "\",\"pointsagainst\":\"" + t13.value + ",\"pointsfor\":\"" + t12.value + ",\"gameslost\":\"" + t15.value + ",\"team\":\"" + t1.value + "\"}";
+                let reqData = "{\"division\":\""
+                + t2.value 
+                + "\",\"gamesdrawn\":" 
+                + t5.value 
+                + ",\"gameslostathome\":" 
+                + t10.value 
+                + ",\"gameslost\":" 
+                + t15.value 
+                + ",\"gameslostaway\":" 
+                + t11.value 
+                + ",\"gamesplayed\":" 
+                + t3.value 
+                + ",\"gamesplayedathome\":" 
+                + t6.value 
+                + ",\"gamesplayedaway\":" 
+                + t7.value 
+                + ",\"gameswon\":" 
+                + t4.value 
+                + ",\"gameswonathome\":" 
+                + t8.value 
+                + ",\"gameswonaway\":" 
+                + t9.value 
+                + "4,\"playoffs\":\"" 
+                + t14.value 
+                + "\",\"pointsagainst\":" 
+                + t13.value 
+                + ",\"pointsfor\":" 
+                + t12.value 
+                + ",\"team\":\"" 
+                + t1.value 
+                + "\"}";
+                console.log(reqData);
                 // prepare fetch options
                 const read_options = {
                     method: 'POST', // *GET, POST, PUT, DELETE, etc.
@@ -232,6 +263,7 @@
                     response.json().then(teams => {
                         console.log(teams);
                         load();
+                        document.getElementById("team_created_message").innerHTML ="Successfully created "+t1.value+" Team";
                     })
                 }) 
                 // catch fetch errors (ie ACCESS to server blocked)
@@ -251,6 +283,7 @@
             <tr><td id="team1"></td><td id="team2"></td></tr>
             <tr><td id="team1_stats"></td><td id="team2_stats"></td></tr>
         </table>
+        <p id="team_created_message"></p>
         <table width="100%">
             <tr><td>Team</td><td><input type="text" id="t1"></td></tr>
             <tr><td>Division</td><td><input type="text" id="t2"></td></tr>
