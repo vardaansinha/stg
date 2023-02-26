@@ -21,6 +21,9 @@
             //const url = "https://flask.nighthawkcodingsociety.com/api/users"
             const create_fetch = url + '/create';
             const read_fetch = url + '/';
+            function test(){
+                console.log("TD Change");
+            }
             function load() {
                 // prepare fetch options
                 const read_options = {
@@ -54,7 +57,7 @@
                         for (let team in teams) {
                             team1Select+= "<option value='"+teams[team].team+"'>"+teams[team].team+"</option>";
                             team2Select+= "<option value='"+teams[team].team+"'>"+teams[team].team+"</option>";
-                            text += "<tr><td>" + teams[team].team + "</td><td>" + teams[team].division + "</td><td><div contenteditable>" + teams[team].gamesplayed + "</div></td><td><div contenteditable>" + teams[team].gameswon + "</div></td><td><div contenteditable>" + teams[team].gameslost + "</div></td><td><div contenteditable>" + teams[team].gamesdrawn + "</div></td><td><div contenteditable>" + teams[team].gamesplayedathome + "</div></td><td><div contenteditable>" + teams[team].gamesplayedaway + "</div></td><td><div contenteditable>" + teams[team].gameswonathome + "</div></td><td><div contenteditable>" + teams[team].gameswonaway + "</div></td><td><div contenteditable>" + teams[team].gameslostathome + "</div></td><td><div contenteditable>" + teams[team].gameslostaway + "</div></td><td><div contenteditable>" + teams[team].pointsfor + "</div></td><td><div contenteditable>" + teams[team].pointsagainst + "</div></td><td><div contenteditable>" + teams[team].playoffs + "</div></td></tr>";
+                            text += "<tr><td>" + teams[team].team + "</td><td>" + teams[team].division + "</td><td><div contenteditable>" + teams[team].gamesplayed + "</div></td><td onchange='test()'><div contenteditable>" + teams[team].gameswon + "</div></td><td><div contenteditable>" + teams[team].gameslost + "</div></td><td><div contenteditable>" + teams[team].gamesdrawn + "</div></td><td><div contenteditable>" + teams[team].gamesplayedathome + "</div></td><td><div contenteditable>" + teams[team].gamesplayedaway + "</div></td><td><div contenteditable>" + teams[team].gameswonathome + "</div></td><td><div contenteditable>" + teams[team].gameswonaway + "</div></td><td><div contenteditable>" + teams[team].gameslostathome + "</div></td><td><div contenteditable>" + teams[team].gameslostaway + "</div></td><td><div contenteditable>" + teams[team].pointsfor + "</div></td><td><div contenteditable>" + teams[team].pointsagainst + "</div></td><td><div contenteditable>" + teams[team].playoffs + "</div></td></tr>";
                         }
                         text += "</table>";
                         team1Select+= "</select>";
