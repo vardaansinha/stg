@@ -8,8 +8,6 @@
 <table style="width:100%" id="table">
   <tr>
     <th>Interesting Event that has happened on a day of this Week</th>
-    <th>Edit Fact</th>
-    <th>Delete Fact</th>
   </tr>
 </table>
 
