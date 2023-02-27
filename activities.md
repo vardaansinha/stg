@@ -5,6 +5,7 @@
 <table  style="width:100%" id = "table">
   <thead>
   <tr>
+    <th>Item</th>
     <th>City</th>
     <th>Network</th>
     <th>News</th>
@@ -22,12 +23,16 @@ var requestOptions = {
   redirect: 'follow'
 };
 
-
+//fetch("http://127.0.0.1:8086/api/breakingnews", requestOptions)
 fetch("https://fnvs.duckdns.org/api/breakingnews", requestOptions)
   .then(response => response.json())
   .then(r => {
     r.forEach(ev => {
       const row = document.createElement("tr")
+      const itemData = document.createElement("td")
+      itemData.innerHTML = `${ev.id}`
+      row.appendChild(itemData)
+
       const cityData = document.createElement("td")
       cityData.innerHTML = `${ev.city}`
       row.appendChild(cityData)
@@ -53,6 +58,7 @@ function reset() {
 <script>
 const resultContainer = document.getElementById("result");
   // prepare URL's to allow easy switch from deployment and localhost
+//const url = "http://127.0.0.1:8086/api/breakingnews"
 const url = "https://fnvs.duckdns.org/api/breakingnews"
 const create_fetch = url + '/create';
 const read_fetch = url + '/';
@@ -143,10 +149,56 @@ function read_users() {
         },
     };
 
+//fetch("http://127.0.0.1:8086/api/breakingnews/create", requestOptions)
   fetch("https://fnvs.duckdns.org/api/breakingnews/create", requestOptions)
     .then(response  => {
        if (response.status == 200) {
           const errorMsg = 'POST SUCCESS: ' + response.status;
+          console.log(errorMsg);
+          reset(); 
+          return;
+        }
+    })
+    .catch(error => console.log('error', error))
+ }
+
+</script>
+
+
+<br/>
+<h2>Delete Breaking News!!</h2>
+
+<form action="javascript:delete_news()">
+    <p><label>
+        News Item:
+        <input type="text" name="deletenews" id="deletenews" required>
+    </label></p>
+
+    <p>
+        <button>Delete Breaking News</button>
+    </p>
+</form>
+
+<script>
+ function delete_news(){
+    const body = {
+        id: document.getElementById("deletenews").value,
+    };
+
+    const requestOptions = {
+        method: 'DELETE',
+        body: JSON.stringify(body),
+        headers: {
+            "content-type": "application/json",
+            'Authorization': 'Bearer my-token',
+        },
+    };
+
+//fetch("http://127.0.0.1:8086/api/breakingnews/delete", requestOptions)
+ fetch("https://fnvs.duckdns.org/api/breakingnews/delete", requestOptions)
+    .then(response  => {
+       if (response.status == 200) {
+          const errorMsg = 'DELETE SUCCESS: ' + response.status;
           console.log(errorMsg);
           reset(); 
           return;
