@@ -3,7 +3,7 @@
 <div class="card-body">
 	<p style="color:red" id="result"></p>
     <p class="card-text">
-		<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+		
         <script>
             // prepare URL's to allow easy switch from deployment and localhost
             //const url = "https://fnvs.duckdns.org/api/nflteam";
