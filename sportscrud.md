@@ -6,8 +6,8 @@
 		
         <script>
             // prepare URL's to allow easy switch from deployment and localhost
-            //const url = "https://fnvs.duckdns.org/api/nflteam";
-            const url = "http://127.0.0.1:8679/api/nflteam";
+            const url = "https://fnvs.duckdns.org/api/nflteam";
+            //const url = "http://127.0.0.1:8679/api/nflteam";
 			const resultContainer = document.getElementById("result");
             const read_fetch = url + '/';
 			const delete_fetch = url + '/delete';

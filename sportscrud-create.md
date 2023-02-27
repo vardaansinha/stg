@@ -7,8 +7,8 @@
             const team2Vals = {};
             const resultContainer = document.getElementById("result");
 			// prepare URL's to allow easy switch from deployment and localhost
-            //const url = "https://fnvs.duckdns.org/api/nflteam"
-            const url = "http://127.0.0.1:8679/api/nflteam";
+            const url = "https://fnvs.duckdns.org/api/nflteam"
+            //const url = "http://127.0.0.1:8679/api/nflteam";
             const create_fetch = url + '/create';
             const update_fetch = url + '/update';
             const read_fetch = url + '/';
