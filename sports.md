@@ -1,7 +1,3 @@
-# NFL
-
-<html>
-<body>
 
 <table style="width:100%" id="table">
   <tr>
@@ -9,20 +5,21 @@
   </tr>
 </table>
 <h2>NFL Team Showdown</h2>
+<button onclick="manageTeams()" type="button">Manage Teams</button> 
 <div class="card-body">
-    <p id="result"></p>
+    <p style="color:red" id="result"></p>
     <p class="card-text">
         <script>
             const team1Vals = {};
             const team2Vals = {};
             const resultContainer = document.getElementById("result");
             // prepare URL's to allow easy switch from deployment and localhost
-            const url = "https://fnvs.duckdns.org/api/nflteam"
-            //const url = "https://flask.nighthawkcodingsociety.com/api/users"
+            //const url = "https://fnvs.duckdns.org/api/nflteam"
+            const url = "http://127.0.0.1:8679/api/nflteam";
             const create_fetch = url + '/create';
             const read_fetch = url + '/';
-            function test(){
-                console.log("TD Change");
+            function manageTeams(){
+                window.location.assign("sportscrud");
             }
             function load() {
                 // prepare fetch options
@@ -42,10 +39,8 @@
                     if (response.status !== 200) {
                         const errorMsg = 'Database read error: ' + response.status;
                         console.log(errorMsg);
-                        const tr = document.createElement("tr");
-                        const td = document.createElement("td");
-                        td.innerHTML = errorMsg;
-                        tr.appendChild(td);
+                        resultContainer.innerHTML = errorMsg;
+						document.getElementById("teams").style.visibility = "hidden"
                         return;
                     }
                     // valid response will have json data
@@ -53,28 +48,24 @@
                         console.log(teams);
                         let team1Select = "<select name='team1_name' id='team1_name' onchange='showTeam1Stats()' onfocus='showTeam1Stats()'><option value=''>Select Team</option>";
                         let team2Select = "<select name='team2_name' id='team2_name' onchange='showTeam2Stats()' onfocus='showTeam2Stats()'><option value=''>Select Challenger</option>";
-                        let text = "<table border='1' style='border-collapse: separate;'><tr><th>Team</th><th>Division</th><th>Games Played</th><th>Games Won</th><th>Games Lost</th><th>Games Drawn</th><th>Games Played At Home</th><th>Games Played Away</th><th>Games Won At Home</th><th>Games Won Away</th><th>Games Lost At Home</th><th>Games Lost Away</th><th>Points For</th><th>Points Against</th><th>Playoffs</th></tr>"
-                        for (let team in teams) {
+                        
+						for (let team in teams) {
                             team1Select+= "<option value='"+teams[team].team+"'>"+teams[team].team+"</option>";
                             team2Select+= "<option value='"+teams[team].team+"'>"+teams[team].team+"</option>";
-                            text += "<tr><td>" + teams[team].team + "</td><td>" + teams[team].division + "</td><td><div contenteditable>" + teams[team].gamesplayed + "</div></td><td onchange='test()'><div contenteditable>" + teams[team].gameswon + "</div></td><td><div contenteditable>" + teams[team].gameslost + "</div></td><td><div contenteditable>" + teams[team].gamesdrawn + "</div></td><td><div contenteditable>" + teams[team].gamesplayedathome + "</div></td><td><div contenteditable>" + teams[team].gamesplayedaway + "</div></td><td><div contenteditable>" + teams[team].gameswonathome + "</div></td><td><div contenteditable>" + teams[team].gameswonaway + "</div></td><td><div contenteditable>" + teams[team].gameslostathome + "</div></td><td><div contenteditable>" + teams[team].gameslostaway + "</div></td><td><div contenteditable>" + teams[team].pointsfor + "</div></td><td><div contenteditable>" + teams[team].pointsagainst + "</div></td><td><div contenteditable>" + teams[team].playoffs + "</div></td></tr>";
                         }
-                        text += "</table>";
+                      
                         team1Select+= "</select>";
                         team2Select+= "</select>";
                         document.getElementById("team1").innerHTML = team1Select;
                         document.getElementById("team2").innerHTML = team2Select;
-                        document.getElementById("demo").innerHTML = text;
+                        //document.getElementById("demo").innerHTML = text;
                     })
                 }) 
                 // catch fetch errors (ie ACCESS to server blocked)
                 .catch(err => {
-                console.error(err);
-                const tr = document.createElement("tr");
-                const td = document.createElement("td");
-                td.innerHTML = err;
-                tr.appendChild(td);
-                resultContainer.appendChild(tr);
+					console.error(err);
+					resultContainer.innerHTML = err;
+					document.getElementById("teams").style.visibility = "hidden";
                 });
             }
             function showStats(teamName, statId) {
@@ -96,10 +87,7 @@
                         if (response.status !== 200) {
                             const errorMsg = 'Database read error: ' + response.status;
                             console.log(errorMsg);
-                            const tr = document.createElement("tr");
-                            const td = document.createElement("td");
-                            td.innerHTML = errorMsg;
-                            tr.appendChild(td);
+                            resultContainer.innerHTML = errorMsg;
                             return;
                         }
                         // valid response will have json data
@@ -126,10 +114,7 @@
                 // catch fetch errors (ie ACCESS to server blocked)
                 .catch(err => {
                     console.error(err);
-                    const tr = document.createElement("tr");
-                    const td = document.createElement("td");
-                    td.innerHTML = err;
-                    tr.appendChild(td);
+                    resultContainer.innerHTML = err
                     resultContainer.appendChild(tr);
                 });
             }
@@ -190,103 +175,14 @@
                     document.getElementById("result").innerHTML="";
                 }
             }
-            function createTeam() {
-                var t1 = document.getElementById("t1");
-                var t2 = document.getElementById("t2");
-                var t3 = document.getElementById("t3");
-                var t4 = document.getElementById("t4");
-                var t5 = document.getElementById("t5");
-                var t6 = document.getElementById("t6");
-                var t7 = document.getElementById("t7");
-                var t8 = document.getElementById("t8");
-                var t9 = document.getElementById("t9");
-                var t10 = document.getElementById("t10");
-                var t11 = document.getElementById("t11");
-                var t12 = document.getElementById("t12");
-                var t13 = document.getElementById("t13");
-                var t14 = document.getElementById("t14");
-                var t15 = document.getElementById("t15");
-                let reqData = "{\"division\":\""
-                + t2.value 
-                + "\",\"gamesdrawn\":" 
-                + t5.value 
-                + ",\"gameslostathome\":" 
-                + t10.value 
-                + ",\"gameslost\":" 
-                + t15.value 
-                + ",\"gameslostaway\":" 
-                + t11.value 
-                + ",\"gamesplayed\":" 
-                + t3.value 
-                + ",\"gamesplayedathome\":" 
-                + t6.value 
-                + ",\"gamesplayedaway\":" 
-                + t7.value 
-                + ",\"gameswon\":" 
-                + t4.value 
-                + ",\"gameswonathome\":" 
-                + t8.value 
-                + ",\"gameswonaway\":" 
-                + t9.value 
-                + "4,\"playoffs\":\"" 
-                + t14.value 
-                + "\",\"pointsagainst\":" 
-                + t13.value 
-                + ",\"pointsfor\":" 
-                + t12.value 
-                + ",\"team\":\"" 
-                + t1.value 
-                + "\"}";
-                console.log(reqData);
-                // prepare fetch options
-                const read_options = {
-                    method: 'POST', // *GET, POST, PUT, DELETE, etc.
-                    mode: 'cors', // no-cors, *cors, same-origin
-                    cache: 'default', // *default, no-cache, reload, force-cache, only-if-cached
-                    credentials: 'omit', // include, *same-origin, omit
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: reqData
-                };     // fetch the data from API
-                fetch(create_fetch, read_options)
-                // response is a RESTful "promise" on any successful fetch
-                .then(response => {
-                    // check for response errors
-                    if (response.status !== 200) {
-                        const errorMsg = 'Database read error: ' + response.status;
-                        console.log(errorMsg);
-                        const tr = document.createElement("tr");
-                        const td = document.createElement("td");
-                        td.innerHTML = errorMsg;
-                        tr.appendChild(td);
-                        return;
-                    }
-                    // valid response will have json data
-                    response.json().then(teams => {
-                        console.log(teams);
-                        load();
-                        document.getElementById("team_created_message").innerHTML ="Successfully created "+t1.value+" Team";
-                    })
-                }) 
-                // catch fetch errors (ie ACCESS to server blocked)
-                .catch(err => {
-                    console.error(err);
-                    const tr = document.createElement("tr");
-                    const td = document.createElement("td");
-                    td.innerHTML = err;
-                    tr.appendChild(td);
-                    resultContainer.appendChild(tr);
-                });
-            }
             load();
         </script>
-        <table width="100%">
+        <table id="teams" width="100%">
             <tr><td>Team</td><td>Challenger</td></tr>
             <tr><td id="team1"></td><td id="team2"></td></tr>
             <tr><td id="team1_stats"></td><td id="team2_stats"></td></tr>
         </table>
-        <p id="team_created_message"></p>
+        <!--<p id="team_created_message"></p>
         <table width="100%">
             <tr><td>Team</td><td><input type="text" id="t1"></td></tr>
             <tr><td>Division</td><td><input type="text" id="t2"></td></tr>
@@ -304,10 +200,10 @@
             <tr><td>Points Against</td><td><input type="text" id="t13"></td></tr>
             <tr><td>Playoffs</td><td><input type="text" id="t14"></td></tr>            
         </table>
-        <a onclick="createTeam()" class="btn btn-primary">Create</a>
-        <br><br>
-        <h5 class="card-title">Team Stats at a Glance</h5>
-        <p id="demo"></p>
+		
+        <button onclick="createTeam()" class="btn btn-primary">Create</a>-->
+		
+        
     </p>
     
 </div>
