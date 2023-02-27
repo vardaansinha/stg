@@ -37,11 +37,6 @@ class NFLTeam(db.Model):
     _gameslost5 = db.Column(db.Integer, primary_key=False)
     _pointsfor = db.Column(db.Integer, primary_key=False)
     _pointsagainst = db.Column(db.Integer, primary_key=False)
-    _pointsinfourthquarter = db.Column(db.Integer, primary_key=False)
-    _pctoverall = db.Column(db.Integer, primary_key=False)
-    _pcthome = db.Column(db.Integer, primary_key=False)
-    _pctaway = db.Column(db.Integer, primary_key=False)
-    _pctlast5 = db.Column(db.Integer, primary_key=False)
     
     
 
