@@ -187,6 +187,9 @@ function read_users() {
 
     const requestOptions = {
         method: 'DELETE',
+        mode: 'cors', // no-cors, *cors, same-origin
+        cache: 'default', // *default, no-cache, reload, force-cache, only-if-cached
+        credentials: 'omit', // include, *same-origin, omit	
         body: JSON.stringify(body),
         headers: {
             "content-type": "application/json",
