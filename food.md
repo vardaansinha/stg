@@ -41,8 +41,8 @@ src="data4justin'sfeature.js"> // get data from outside file
 
 <script>
 
-function question(){
-  random3 = Math.floor(Math.random() * quest.length); 
+function question(){   //function makes question
+  random3 = Math.floor(Math.random() * quest.length); //grab rand question
 
   questout = (random, quest[random3]);
 
@@ -56,7 +56,7 @@ function question(){
   alert("new question made!")
 }
 
-function test(ans){
+function test(ans){ //tests if right or wrong
   ans = parseInt(useranswer.value);
   
   if (ans == (questoutANS)) {
@@ -309,11 +309,10 @@ function create_user() {
        if (response.status == 200) {
           const errorMsg = 'POST SUCCESS: ' + response.status;
           console.log(errorMsg);
-          reset(); 
           return;
         }
     })
-    .catch(error => console.log('error', error))
+    .catch(alert("error"))
  }
 
 </script>

@@ -8,6 +8,8 @@ const facts = ["Avocados are a fruit, not a vegetable",
 "The real name for a hashtag is an octothorpe"]
 
 const words = ["dog", "cat","bird", "seagull", "schizophrenia","repeat", "goal", "moon","kleptomania","failure", "success"]
+
+
 var quest = [{question: "what is 4 + 4?", correctAnswer: '8'},
  {question: "what is 2 * 2?", correctAnswer: '4'}, 
  {question: "what is 12 * 12?", correctAnswer: '144'},
