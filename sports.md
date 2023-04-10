@@ -14,8 +14,7 @@
             const team2Vals = {};
             const resultContainer = document.getElementById("result");
             // prepare URL's to allow easy switch from deployment and localhost
-            const url = "https://fnvs.duckdns.org/api/nflteam"
-            //const url = "http://127.0.0.1:8679/api/nflteam";
+            const url = "http://192.168.68.75:8679/nflteams"
             const create_fetch = url + '/create';
             const read_fetch = url + '/';
             function manageTeams(){
@@ -48,12 +47,10 @@
                         console.log(teams);
                         let team1Select = "<select name='team1_name' id='team1_name' onchange='showTeam1Stats()' onfocus='showTeam1Stats()'><option value=''>Select Team</option>";
                         let team2Select = "<select name='team2_name' id='team2_name' onchange='showTeam2Stats()' onfocus='showTeam2Stats()'><option value=''>Select Challenger</option>";
-                        
 						for (let team in teams) {
                             team1Select+= "<option value='"+teams[team].team+"'>"+teams[team].team+"</option>";
                             team2Select+= "<option value='"+teams[team].team+"'>"+teams[team].team+"</option>";
                         }
-                      
                         team1Select+= "</select>";
                         team2Select+= "</select>";
                         document.getElementById("team1").innerHTML = team1Select;
@@ -200,7 +197,6 @@
             <tr><td>Points Against</td><td><input type="text" id="t13"></td></tr>
             <tr><td>Playoffs</td><td><input type="text" id="t14"></td></tr>            
         </table>
-		
         <button onclick="createTeam()" class="btn btn-primary">Create</a>-->
 		
         
